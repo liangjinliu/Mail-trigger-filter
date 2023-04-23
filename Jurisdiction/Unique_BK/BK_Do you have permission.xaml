@@ -1,0 +1,220 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Do_you_have_permission" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_mail" Type="InArgument(snm:MailMessage)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_drServiceCatalogoe" Type="InArgument(sd:DataRow)" />
+    <x:Property Name="out_permission_exception" Type="OutArgument(s:Exception)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1343,2261</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Do_you_have_permission_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Do_you_have_permission" sap:VirtualizedContainerService.HintSize="877,2056" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="get_sender" />
+      <Variable x:TypeArguments="x:String" Name="get_sbject" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch Permission exception" sap:VirtualizedContainerService.HintSize="835,1964" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Sequence Permission exception" sap:VirtualizedContainerService.HintSize="797,1302" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+            <TextExpression.Namespaces>
+              <sco:Collection x:TypeArguments="x:String">
+                <x:String>System.Activities</x:String>
+                <x:String>System.Activities.Statements</x:String>
+                <x:String>System.Activities.Expressions</x:String>
+                <x:String>System.Activities.Validation</x:String>
+                <x:String>System.Activities.XamlIntegration</x:String>
+                <x:String>Microsoft.VisualBasic.Activities</x:String>
+                <x:String>System</x:String>
+                <x:String>System.Collections.Generic</x:String>
+                <x:String>System.Data</x:String>
+                <x:String>System.Diagnostics</x:String>
+                <x:String>System.IO</x:String>
+                <x:String>System.Linq</x:String>
+                <x:String>System.Management.Automation</x:String>
+                <x:String>System.Net.Mail</x:String>
+                <x:String>System.Xml</x:String>
+                <x:String>System.Xml.Linq</x:String>
+                <x:String>UiPath.Library</x:String>
+                <x:String>System.Windows.Markup</x:String>
+              </sco:Collection>
+            </TextExpression.Namespaces>
+            <TextExpression.References>
+              <sco:Collection x:TypeArguments="AssemblyReference">
+                <AssemblyReference>System.Activities</AssemblyReference>
+                <AssemblyReference>mscorlib</AssemblyReference>
+                <AssemblyReference>System.Data</AssemblyReference>
+                <AssemblyReference>System</AssemblyReference>
+                <AssemblyReference>System.Core</AssemblyReference>
+                <AssemblyReference>System.Management.Automation</AssemblyReference>
+                <AssemblyReference>System.Xml</AssemblyReference>
+                <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                <AssemblyReference>UiPath.Library</AssemblyReference>
+                <AssemblyReference>PresentationFramework</AssemblyReference>
+                <AssemblyReference>WindowsBase</AssemblyReference>
+                <AssemblyReference>PresentationCore</AssemblyReference>
+                <AssemblyReference>System.Xaml</AssemblyReference>
+              </sco:Collection>
+            </TextExpression.References>
+            <sap2010:WorkflowViewState.ViewStateManager>
+              <sap2010:ViewStateManager>
+                <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+              </sap2010:ViewStateManager>
+            </sap2010:WorkflowViewState.ViewStateManager>
+          </Delay>
+          <Assign DisplayName="Assign Get sender" sap:VirtualizedContainerService.HintSize="755,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[get_sender]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[in_mail.Sender.Address.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log Message print sender" sap:VirtualizedContainerService.HintSize="755,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[cstr(iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_mail_sender_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_mail_sender_E_Message&quot;).ToString,in_Config(&quot;language_mail_sender_T_Message&quot;).ToString)))+&quot; : &quot;+get_sender.ToString]" />
+          <Assign DisplayName="Assign Get sbject" sap:VirtualizedContainerService.HintSize="755,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[get_sbject]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[in_mail.Subject.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log Message print subject" sap:VirtualizedContainerService.HintSize="755,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[cstr(iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_mail_subject_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_mail_subject_E_Message&quot;).ToString,in_Config(&quot;language_mail_subject_T_Message&quot;).ToString)))+&quot; : &quot;+in_mail.Subject.ToString]" />
+          <ui:LogMessage DisplayName="Log Message print authorituy" sap:VirtualizedContainerService.HintSize="755,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[CStr(iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_authority_execute_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_authority_execute_E_Message&quot;).ToString,in_Config(&quot;language_authority_execute_T_Message&quot;).ToString)))]" />
+          <ui:Comment sap:VirtualizedContainerService.HintSize="755,74" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Do you have the authority to execute the modification instruction" />
+          <If Condition="[in_drServiceCatalogoe(&quot;Whitelist&quot;).ToString.Contains(get_sender.Trim.Replace(&quot;.cn&quot;,&quot;&quot;).Trim)]" DisplayName="If Do you have the authority to execute the modification instruction" sap:VirtualizedContainerService.HintSize="755,441" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <ui:LogMessage DisplayName="Log Message print Have authority" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[CSTR(IIf(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_jurisdiction_Y_L_Message&quot;).ToString,IIF(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_jurisdiction_Y_E_Message&quot;).ToString,in_Config(&quot;language_jurisdiction_Y_T_Message&quot;).ToString)))]" />
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Sequence No permission" sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message prnt No pemission" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[CSTR(IIF(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_jurisdiction_N_L_Message&quot;).ToString,IIF(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_jurisdiction_N_E_Message&quot;).ToString,in_Config(&quot;language_jurisdiction_N_T_Message&quot;).ToString)))]" />
+                <Assign DisplayName="Assign No permission" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:Exception">[out_permission_exception]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="s:Exception">[new Exception(CSTR(IIF(in_Config("language").ToString.Equals("L"),in_Config("language_jurisdiction_N_L_Message").ToString,IIF(in_Config("language").ToString.Equals("E"),in_Config("language_jurisdiction_N_E_Message").ToString,in_Config("language_jurisdiction_N_T_Message").ToString))))]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="801,352" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Sequence do you hae permission exception" sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message print permission exception" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[cstr(iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_permisson_exception_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_permisson_exception_E_Message&quot;).ToString,in_Config(&quot;language_permisson_exception_T_Message&quot;).ToString)))+&quot; : &quot;+exception.Message.ToString+&quot;, source : &quot;+exception.Source.ToString]" />
+              <Assign DisplayName=" Assgin permission excepiton" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:Exception">[out_permission_exception]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:Exception">[exception]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

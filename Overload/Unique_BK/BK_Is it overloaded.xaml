@@ -1,0 +1,268 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Is_it_overloaded" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_overload_exception" Type="OutArgument(s:Exception)" />
+    <x:Property Name="out_mail_list" Type="OutArgument(scg:List(snm:MailMessage))" />
+    <x:Property Name="out_Overload_information" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1254,2358</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Is_it_overloaded_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="54">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="58">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Is_it_overloaded" sap:VirtualizedContainerService.HintSize="568,2193" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Sequence is it overloaded" sap:VirtualizedContainerService.HintSize="526,2101" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:Comment DisplayName="Comment read" sap:VirtualizedContainerService.HintSize="484,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Read mail 《读取邮件》" />
+      <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+        <TextExpression.Namespaces>
+          <sco:Collection x:TypeArguments="x:String">
+            <x:String>System.Activities</x:String>
+            <x:String>System.Activities.Statements</x:String>
+            <x:String>System.Activities.Expressions</x:String>
+            <x:String>System.Activities.Validation</x:String>
+            <x:String>System.Activities.XamlIntegration</x:String>
+            <x:String>Microsoft.VisualBasic.Activities</x:String>
+            <x:String>System</x:String>
+            <x:String>System.Collections.Generic</x:String>
+            <x:String>System.Data</x:String>
+            <x:String>System.Diagnostics</x:String>
+            <x:String>System.IO</x:String>
+            <x:String>System.Linq</x:String>
+            <x:String>System.Management.Automation</x:String>
+            <x:String>System.Net.Mail</x:String>
+            <x:String>System.Xml</x:String>
+            <x:String>System.Xml.Linq</x:String>
+            <x:String>UiPath.Library</x:String>
+            <x:String>System.Windows.Markup</x:String>
+          </sco:Collection>
+        </TextExpression.Namespaces>
+        <TextExpression.References>
+          <sco:Collection x:TypeArguments="AssemblyReference">
+            <AssemblyReference>System.Activities</AssemblyReference>
+            <AssemblyReference>mscorlib</AssemblyReference>
+            <AssemblyReference>System.Data</AssemblyReference>
+            <AssemblyReference>System</AssemblyReference>
+            <AssemblyReference>System.Core</AssemblyReference>
+            <AssemblyReference>System.Management.Automation</AssemblyReference>
+            <AssemblyReference>System.Xml</AssemblyReference>
+            <AssemblyReference>System.Xml.Linq</AssemblyReference>
+            <AssemblyReference>UiPath.Library</AssemblyReference>
+            <AssemblyReference>PresentationFramework</AssemblyReference>
+            <AssemblyReference>WindowsBase</AssemblyReference>
+            <AssemblyReference>PresentationCore</AssemblyReference>
+            <AssemblyReference>System.Xaml</AssemblyReference>
+          </sco:Collection>
+        </TextExpression.References>
+        <sap2010:WorkflowViewState.ViewStateManager>
+          <sap2010:ViewStateManager>
+            <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+          </sap2010:ViewStateManager>
+        </sap2010:WorkflowViewState.ViewStateManager>
+      </Delay>
+      <ui:RetryScope DisplayName="Retry Scope Try again three times" sap:VirtualizedContainerService.HintSize="484,350" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+        <ui:RetryScope.ActivityBody>
+          <ActivityAction>
+            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="242,176" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="[in_Config(&quot;mailbox_Inbox&quot;).ToString]" MarkAsRead="False" Messages="[out_mail_list]" OnlyUnreadMessages="True" OrderByDate="OldestFirst" Top="30" />
+              <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+                <TextExpression.Namespaces>
+                  <sco:Collection x:TypeArguments="x:String">
+                    <x:String>System.Activities</x:String>
+                    <x:String>System.Activities.Statements</x:String>
+                    <x:String>System.Activities.Expressions</x:String>
+                    <x:String>System.Activities.Validation</x:String>
+                    <x:String>System.Activities.XamlIntegration</x:String>
+                    <x:String>Microsoft.VisualBasic.Activities</x:String>
+                    <x:String>System</x:String>
+                    <x:String>System.Collections.Generic</x:String>
+                    <x:String>System.Data</x:String>
+                    <x:String>System.Diagnostics</x:String>
+                    <x:String>System.IO</x:String>
+                    <x:String>System.Linq</x:String>
+                    <x:String>System.Management.Automation</x:String>
+                    <x:String>System.Net.Mail</x:String>
+                    <x:String>System.Xml</x:String>
+                    <x:String>System.Xml.Linq</x:String>
+                    <x:String>UiPath.Library</x:String>
+                    <x:String>System.Windows.Markup</x:String>
+                  </sco:Collection>
+                </TextExpression.Namespaces>
+                <TextExpression.References>
+                  <sco:Collection x:TypeArguments="AssemblyReference">
+                    <AssemblyReference>System.Activities</AssemblyReference>
+                    <AssemblyReference>mscorlib</AssemblyReference>
+                    <AssemblyReference>System.Data</AssemblyReference>
+                    <AssemblyReference>System</AssemblyReference>
+                    <AssemblyReference>System.Core</AssemblyReference>
+                    <AssemblyReference>System.Management.Automation</AssemblyReference>
+                    <AssemblyReference>System.Xml</AssemblyReference>
+                    <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                    <AssemblyReference>UiPath.Library</AssemblyReference>
+                    <AssemblyReference>PresentationFramework</AssemblyReference>
+                    <AssemblyReference>WindowsBase</AssemblyReference>
+                    <AssemblyReference>PresentationCore</AssemblyReference>
+                    <AssemblyReference>System.Xaml</AssemblyReference>
+                  </sco:Collection>
+                </TextExpression.References>
+                <sap2010:WorkflowViewState.ViewStateManager>
+                  <sap2010:ViewStateManager>
+                    <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+                  </sap2010:ViewStateManager>
+                </sap2010:WorkflowViewState.ViewStateManager>
+              </Delay>
+            </Sequence>
+          </ActivityAction>
+        </ui:RetryScope.ActivityBody>
+        <ui:RetryScope.Condition>
+          <ActivityFunc x:TypeArguments="x:Boolean" />
+        </ui:RetryScope.Condition>
+      </ui:RetryScope>
+      <ui:LogMessage DisplayName="Log Message Total number of messages" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[CStr(iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_total_number_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_total_number_E_Message&quot;).ToString,in_Config(&quot;language_total_number_T_Message&quot;).ToString)))+&quot; : &quot;+out_mail_list.Count.ToString]" />
+      <ui:Comment DisplayName="Comment overloaded" sap:VirtualizedContainerService.HintSize="484,131" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Judge whether it is overloaded or not 《判断是否超载》&#xA;1，Equal to zero, no instructions to execute&#xA;2，Instructions to be processed if they are greater than zero and less than ten&#xA;2，Over ten, overload" />
+      <If Condition="[out_mail_list.Count=0]" DisplayName="If it is overloaded" sap:VirtualizedContainerService.HintSize="484,560" sap2010:WorkflowViewState.IdRef="If_1">
+        <If.Then>
+          <Sequence DisplayName="Sequence 0 end process" sap:VirtualizedContainerService.HintSize="376,383" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message 0" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[cstr(iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_overloaded_0_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_overloaded_0_E_Message&quot;).ToString,in_Config(&quot;language_overloaded_0_T_Message&quot;).ToString)))]" />
+            <Assign DisplayName="Assign information" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_Overload_information]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[CStr(iif(in_Config("language").ToString.Equals("L"),in_Config("language_there_no_instructions_L_Message").ToString,iif(in_Config("language").ToString.Equals("E"),in_Config("language_there_no_instructions_E_Message").ToString,in_Config("language_there_no_instructions_T_Message").ToString)))]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign 0 Record status" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:Exception">[out_overload_exception]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:Exception">[new Exception(cstr(iif(in_Config("language").ToString.Equals("L"),in_Config("language_overloaded_0_L_Message").ToString,iif(in_Config("language").ToString.Equals("E"),in_Config("language_overloaded_0_E_Message").ToString,in_Config("language_overloaded_0_T_Message").ToString))))]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Then>
+      </If>
+      <If Condition="[out_mail_list.Count&gt;CInt(in_Config(&quot;Total mail limit&quot;).ToString)]" DisplayName="If it is overloaded &gt;10" sap:VirtualizedContainerService.HintSize="484,560" sap2010:WorkflowViewState.IdRef="If_2">
+        <If.Then>
+          <Sequence DisplayName="Sequence &gt;10 overloaded" sap:VirtualizedContainerService.HintSize="376,383" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message &gt;10" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[cstr(IIf(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_overloaded_10_L_Message&quot;).ToString,IIf(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_overloaded_10_E_Message&quot;).ToString,in_Config(&quot;language_overloaded_10_T_Message&quot;).ToString)))]" />
+            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:Exception">[out_overload_exception]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:Exception">[new Exception(cstr(IIf(in_Config("language").ToString.Equals("L"),in_Config("language_overloaded_10_L_Message").ToString,IIf(in_Config("language").ToString.Equals("E"),in_Config("language_overloaded_10_E_Message").ToString,in_Config("language_overloaded_10_T_Message").ToString))))]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign Overload information" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_Overload_information]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[CStr(iif(in_Config("language").ToString.Equals("L"),in_Config("language_overload_L_Message").ToString,iif(in_Config("language").ToString.Equals("E"),in_Config("language_overload_E_Message").ToString,in_Config("language_overload_T_Message").ToString)))]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Then>
+      </If>
+    </Sequence>
+  </Sequence>
+</Activity>

@@ -1,0 +1,17 @@
+{DateTime.Now.ToString("yyyy/MM/dd"),mail.Subject.ToString,mail.Date.ToString,"","",mail.Sender.User,mail.Sender.Address.ToString,mail.Body.ToString.Trim,dr_ServiceCatalogoe("States").ToString,permission_exception.Message.ToString,"",""}
+
+
+
+in_drServiceCatalogoe("Whitelist").ToString.Contains(get_sender.Trim.Replace(".cn","").Trim) Or get_sender.Trim.ToLower.Replace(".cn","").Replace(";","").Trim.Equals(in_Config("Server email address").ToString.Trim.ToLower) Or out_ExecuteTable.Select.Where(Function(x) String.IsNullOrEmpty(x("Ö¸Áî®³£ÙYÓ").ToString)).Count>0
+
+
+in_Config("Processing accessories").ToString+in_Current_year+"\"+in_Current_month+"\"+in_Current_time+"Execute Table.xlsx"
+
+
+Config("Processing accessories").ToString+in_Current_year+"\"+in_Current_month+"\"+in_Current_time+"Execute Table.xlsx"
+
+C:\Users\Administrator\Desktop\Automated mail filter\02_Mail trigger filter\06_Abnormal screenshot\20210802202108021906237210Process_Abnormal_screenshot.jpg
+
+
+EndTime.Subtract(StartTime).ToString.IndexOf(".")
+Instr(EndTime.Subtract(StartTime).ToString,".")-1

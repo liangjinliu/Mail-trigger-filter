@@ -1,0 +1,584 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Two_years" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_Current_time" Type="InArgument(x:String)" />
+    <x:Property Name="out_MailMessage" Type="OutArgument(snm:MailMessage)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1464,3309</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Two_years_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="30">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Two_years" sap:VirtualizedContainerService.HintSize="1474,3144" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="00153:Sequence two years" sap:VirtualizedContainerService.HintSize="1432,3052" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="scg:List(x:String)" Name="list_year">
+          <Variable.Default>
+            <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new list(of string)" />
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="scg:List(x:String)" Name="list_attachments">
+          <Variable.Default>
+            <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new list(of string)" />
+          </Variable.Default>
+        </Variable>
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:Comment DisplayName="00154:Comment" sap:VirtualizedContainerService.HintSize="1390,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// add to collection" />
+      <ui:LogMessage DisplayName="Log Message two years " sap:VirtualizedContainerService.HintSize="1390,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_two_years_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_two_years_E_Message&quot;).ToString,in_Config(&quot;language_two_years_T_Message&quot;).ToString))]" />
+      <AddToCollection x:TypeArguments="x:String" Collection="[list_year]" DisplayName="00155:Add To Collection" sap:VirtualizedContainerService.HintSize="1390,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[DateTime.Now.AddYears(-1).ToString(&quot;yyyy&quot;)]" />
+      <AddToCollection x:TypeArguments="x:String" Collection="[list_year]" DisplayName="00156:Add To Collection" sap:VirtualizedContainerService.HintSize="1390,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="[DateTime.Now.ToString(&quot;yyyy&quot;)]" />
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="00157:For Each Extract records" sap:VirtualizedContainerService.HintSize="1390,2239" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[list_year]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="x:String">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="00158:Body" sap:VirtualizedContainerService.HintSize="1354,2105" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="00159:Log Message print year" sap:VirtualizedContainerService.HintSize="1312,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;year : &quot;+item.ToString]" />
+              <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00160:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="1312,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+                <TextExpression.Namespaces>
+                  <sco:Collection x:TypeArguments="x:String">
+                    <x:String>System.Activities</x:String>
+                    <x:String>System.Activities.Statements</x:String>
+                    <x:String>System.Activities.Expressions</x:String>
+                    <x:String>System.Activities.Validation</x:String>
+                    <x:String>System.Activities.XamlIntegration</x:String>
+                    <x:String>Microsoft.VisualBasic.Activities</x:String>
+                    <x:String>System</x:String>
+                    <x:String>System.Collections.Generic</x:String>
+                    <x:String>System.Data</x:String>
+                    <x:String>System.Diagnostics</x:String>
+                    <x:String>System.IO</x:String>
+                    <x:String>System.Linq</x:String>
+                    <x:String>System.Management.Automation</x:String>
+                    <x:String>System.Net.Mail</x:String>
+                    <x:String>System.Xml</x:String>
+                    <x:String>System.Xml.Linq</x:String>
+                    <x:String>UiPath.Library</x:String>
+                    <x:String>System.Windows.Markup</x:String>
+                  </sco:Collection>
+                </TextExpression.Namespaces>
+                <TextExpression.References>
+                  <sco:Collection x:TypeArguments="AssemblyReference">
+                    <AssemblyReference>System.Activities</AssemblyReference>
+                    <AssemblyReference>mscorlib</AssemblyReference>
+                    <AssemblyReference>System.Data</AssemblyReference>
+                    <AssemblyReference>System</AssemblyReference>
+                    <AssemblyReference>System.Core</AssemblyReference>
+                    <AssemblyReference>System.Management.Automation</AssemblyReference>
+                    <AssemblyReference>System.Xml</AssemblyReference>
+                    <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                    <AssemblyReference>UiPath.Library</AssemblyReference>
+                    <AssemblyReference>PresentationFramework</AssemblyReference>
+                    <AssemblyReference>WindowsBase</AssemblyReference>
+                    <AssemblyReference>PresentationCore</AssemblyReference>
+                    <AssemblyReference>System.Xaml</AssemblyReference>
+                  </sco:Collection>
+                </TextExpression.References>
+                <sap2010:WorkflowViewState.ViewStateManager>
+                  <sap2010:ViewStateManager>
+                    <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+                  </sap2010:ViewStateManager>
+                </sap2010:WorkflowViewState.ViewStateManager>
+              </Delay>
+              <If Condition="[Directory.GetFiles(in_Config(&quot;Processing records&quot;).ToString+item,&quot;.xlsx&quot;).Count&gt;0]" DisplayName="00161:If Does the folder exist" sap:VirtualizedContainerService.HintSize="1312,1820" sap2010:WorkflowViewState.IdRef="If_2">
+                <If.Then>
+                  <Sequence DisplayName="00162:Sequence Save extraction records" sap:VirtualizedContainerService.HintSize="933,1662" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00163:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="891,22" sap2010:WorkflowViewState.IdRef="Delay_2">
+                      <TextExpression.Namespaces>
+                        <sco:Collection x:TypeArguments="x:String">
+                          <x:String>System.Activities</x:String>
+                          <x:String>System.Activities.Statements</x:String>
+                          <x:String>System.Activities.Expressions</x:String>
+                          <x:String>System.Activities.Validation</x:String>
+                          <x:String>System.Activities.XamlIntegration</x:String>
+                          <x:String>Microsoft.VisualBasic.Activities</x:String>
+                          <x:String>System</x:String>
+                          <x:String>System.Collections.Generic</x:String>
+                          <x:String>System.Data</x:String>
+                          <x:String>System.Diagnostics</x:String>
+                          <x:String>System.IO</x:String>
+                          <x:String>System.Linq</x:String>
+                          <x:String>System.Management.Automation</x:String>
+                          <x:String>System.Net.Mail</x:String>
+                          <x:String>System.Xml</x:String>
+                          <x:String>System.Xml.Linq</x:String>
+                          <x:String>UiPath.Library</x:String>
+                          <x:String>System.Windows.Markup</x:String>
+                        </sco:Collection>
+                      </TextExpression.Namespaces>
+                      <TextExpression.References>
+                        <sco:Collection x:TypeArguments="AssemblyReference">
+                          <AssemblyReference>System.Activities</AssemblyReference>
+                          <AssemblyReference>mscorlib</AssemblyReference>
+                          <AssemblyReference>System.Data</AssemblyReference>
+                          <AssemblyReference>System</AssemblyReference>
+                          <AssemblyReference>System.Core</AssemblyReference>
+                          <AssemblyReference>System.Management.Automation</AssemblyReference>
+                          <AssemblyReference>System.Xml</AssemblyReference>
+                          <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                          <AssemblyReference>UiPath.Library</AssemblyReference>
+                          <AssemblyReference>PresentationFramework</AssemblyReference>
+                          <AssemblyReference>WindowsBase</AssemblyReference>
+                          <AssemblyReference>PresentationCore</AssemblyReference>
+                          <AssemblyReference>System.Xaml</AssemblyReference>
+                        </sco:Collection>
+                      </TextExpression.References>
+                      <sap2010:WorkflowViewState.ViewStateManager>
+                        <sap2010:ViewStateManager>
+                          <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+                        </sap2010:ViewStateManager>
+                      </sap2010:WorkflowViewState.ViewStateManager>
+                    </Delay>
+                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="00164:For Each Extract records" sap:VirtualizedContainerService.HintSize="891,1351" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Directory.GetFiles(in_Config(&quot;Processing records&quot;).ToString+item,&quot;.xlsx&quot;)]">
+                      <ui:ForEach.Body>
+                        <ActivityAction x:TypeArguments="x:String">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:String" Name="item1" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="00165:Body" sap:VirtualizedContainerService.HintSize="855,1217" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="ui:WorkbookApplication" Name="Workbook" />
+                              <Variable x:TypeArguments="sd:DataTable" Name="dt_Extract_records" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00166:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="813,22" sap2010:WorkflowViewState.IdRef="Delay_3">
+                              <TextExpression.Namespaces>
+                                <sco:Collection x:TypeArguments="x:String">
+                                  <x:String>System.Activities</x:String>
+                                  <x:String>System.Activities.Statements</x:String>
+                                  <x:String>System.Activities.Expressions</x:String>
+                                  <x:String>System.Activities.Validation</x:String>
+                                  <x:String>System.Activities.XamlIntegration</x:String>
+                                  <x:String>Microsoft.VisualBasic.Activities</x:String>
+                                  <x:String>System</x:String>
+                                  <x:String>System.Collections.Generic</x:String>
+                                  <x:String>System.Data</x:String>
+                                  <x:String>System.Diagnostics</x:String>
+                                  <x:String>System.IO</x:String>
+                                  <x:String>System.Linq</x:String>
+                                  <x:String>System.Management.Automation</x:String>
+                                  <x:String>System.Net.Mail</x:String>
+                                  <x:String>System.Xml</x:String>
+                                  <x:String>System.Xml.Linq</x:String>
+                                  <x:String>UiPath.Library</x:String>
+                                  <x:String>System.Windows.Markup</x:String>
+                                </sco:Collection>
+                              </TextExpression.Namespaces>
+                              <TextExpression.References>
+                                <sco:Collection x:TypeArguments="AssemblyReference">
+                                  <AssemblyReference>System.Activities</AssemblyReference>
+                                  <AssemblyReference>mscorlib</AssemblyReference>
+                                  <AssemblyReference>System.Data</AssemblyReference>
+                                  <AssemblyReference>System</AssemblyReference>
+                                  <AssemblyReference>System.Core</AssemblyReference>
+                                  <AssemblyReference>System.Management.Automation</AssemblyReference>
+                                  <AssemblyReference>System.Xml</AssemblyReference>
+                                  <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                                  <AssemblyReference>UiPath.Library</AssemblyReference>
+                                  <AssemblyReference>PresentationFramework</AssemblyReference>
+                                  <AssemblyReference>WindowsBase</AssemblyReference>
+                                  <AssemblyReference>PresentationCore</AssemblyReference>
+                                  <AssemblyReference>System.Xaml</AssemblyReference>
+                                </sco:Collection>
+                              </TextExpression.References>
+                              <sap2010:WorkflowViewState.ViewStateManager>
+                                <sap2010:ViewStateManager>
+                                  <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+                                </sap2010:ViewStateManager>
+                              </sap2010:WorkflowViewState.ViewStateManager>
+                            </Delay>
+                            <ui:LogMessage DisplayName="00167:Log Message print file path" sap:VirtualizedContainerService.HintSize="813,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;file path : &quot;+item1.ToString]" />
+                            <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00168:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="813,22" sap2010:WorkflowViewState.IdRef="Delay_4">
+                              <TextExpression.Namespaces>
+                                <sco:Collection x:TypeArguments="x:String">
+                                  <x:String>System.Activities</x:String>
+                                  <x:String>System.Activities.Statements</x:String>
+                                  <x:String>System.Activities.Expressions</x:String>
+                                  <x:String>System.Activities.Validation</x:String>
+                                  <x:String>System.Activities.XamlIntegration</x:String>
+                                  <x:String>Microsoft.VisualBasic.Activities</x:String>
+                                  <x:String>System</x:String>
+                                  <x:String>System.Collections.Generic</x:String>
+                                  <x:String>System.Data</x:String>
+                                  <x:String>System.Diagnostics</x:String>
+                                  <x:String>System.IO</x:String>
+                                  <x:String>System.Linq</x:String>
+                                  <x:String>System.Management.Automation</x:String>
+                                  <x:String>System.Net.Mail</x:String>
+                                  <x:String>System.Xml</x:String>
+                                  <x:String>System.Xml.Linq</x:String>
+                                  <x:String>UiPath.Library</x:String>
+                                  <x:String>System.Windows.Markup</x:String>
+                                </sco:Collection>
+                              </TextExpression.Namespaces>
+                              <TextExpression.References>
+                                <sco:Collection x:TypeArguments="AssemblyReference">
+                                  <AssemblyReference>System.Activities</AssemblyReference>
+                                  <AssemblyReference>mscorlib</AssemblyReference>
+                                  <AssemblyReference>System.Data</AssemblyReference>
+                                  <AssemblyReference>System</AssemblyReference>
+                                  <AssemblyReference>System.Core</AssemblyReference>
+                                  <AssemblyReference>System.Management.Automation</AssemblyReference>
+                                  <AssemblyReference>System.Xml</AssemblyReference>
+                                  <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                                  <AssemblyReference>UiPath.Library</AssemblyReference>
+                                  <AssemblyReference>PresentationFramework</AssemblyReference>
+                                  <AssemblyReference>WindowsBase</AssemblyReference>
+                                  <AssemblyReference>PresentationCore</AssemblyReference>
+                                  <AssemblyReference>System.Xaml</AssemblyReference>
+                                </sco:Collection>
+                              </TextExpression.References>
+                              <sap2010:WorkflowViewState.ViewStateManager>
+                                <sap2010:ViewStateManager>
+                                  <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+                                </sap2010:ViewStateManager>
+                              </sap2010:WorkflowViewState.ViewStateManager>
+                            </Delay>
+                            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="00169:Excel Application Scope" sap:VirtualizedContainerService.HintSize="813,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Workbook="[Workbook]" WorkbookPath="[item1]">
+                              <ui:ExcelApplicationScope.Body>
+                                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="00170:Do" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_Extract_records]" DisplayName="00171:Read Range" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="[Workbook.GetSheets(0)]">
+                                      <ui:ExcelReadRange.Range>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </ui:ExcelReadRange.Range>
+                                    </ui:ExcelReadRange>
+                                  </Sequence>
+                                </ActivityAction>
+                              </ui:ExcelApplicationScope.Body>
+                            </ui:ExcelApplicationScope>
+                            <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00172:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="813,22" sap2010:WorkflowViewState.IdRef="Delay_5">
+                              <TextExpression.Namespaces>
+                                <sco:Collection x:TypeArguments="x:String">
+                                  <x:String>System.Activities</x:String>
+                                  <x:String>System.Activities.Statements</x:String>
+                                  <x:String>System.Activities.Expressions</x:String>
+                                  <x:String>System.Activities.Validation</x:String>
+                                  <x:String>System.Activities.XamlIntegration</x:String>
+                                  <x:String>Microsoft.VisualBasic.Activities</x:String>
+                                  <x:String>System</x:String>
+                                  <x:String>System.Collections.Generic</x:String>
+                                  <x:String>System.Data</x:String>
+                                  <x:String>System.Diagnostics</x:String>
+                                  <x:String>System.IO</x:String>
+                                  <x:String>System.Linq</x:String>
+                                  <x:String>System.Management.Automation</x:String>
+                                  <x:String>System.Net.Mail</x:String>
+                                  <x:String>System.Xml</x:String>
+                                  <x:String>System.Xml.Linq</x:String>
+                                  <x:String>UiPath.Library</x:String>
+                                  <x:String>System.Windows.Markup</x:String>
+                                </sco:Collection>
+                              </TextExpression.Namespaces>
+                              <TextExpression.References>
+                                <sco:Collection x:TypeArguments="AssemblyReference">
+                                  <AssemblyReference>System.Activities</AssemblyReference>
+                                  <AssemblyReference>mscorlib</AssemblyReference>
+                                  <AssemblyReference>System.Data</AssemblyReference>
+                                  <AssemblyReference>System</AssemblyReference>
+                                  <AssemblyReference>System.Core</AssemblyReference>
+                                  <AssemblyReference>System.Management.Automation</AssemblyReference>
+                                  <AssemblyReference>System.Xml</AssemblyReference>
+                                  <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                                  <AssemblyReference>UiPath.Library</AssemblyReference>
+                                  <AssemblyReference>PresentationFramework</AssemblyReference>
+                                  <AssemblyReference>WindowsBase</AssemblyReference>
+                                  <AssemblyReference>PresentationCore</AssemblyReference>
+                                  <AssemblyReference>System.Xaml</AssemblyReference>
+                                </sco:Collection>
+                              </TextExpression.References>
+                              <sap2010:WorkflowViewState.ViewStateManager>
+                                <sap2010:ViewStateManager>
+                                  <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+                                </sap2010:ViewStateManager>
+                              </sap2010:WorkflowViewState.ViewStateManager>
+                            </Delay>
+                            <If Condition="[not new FileInfo(in_Config(&quot;Extract records&quot;).ToString+item.ToString+&quot;\&quot;+in_Current_time+&quot;particular_year_processingrecords.xlsx&quot;).Exists]" DisplayName="00173:If Does the extraction record file exist" sap:VirtualizedContainerService.HintSize="813,508" sap2010:WorkflowViewState.IdRef="If_1">
+                              <If.Then>
+                                <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="00174:Excel Application Scope&lt;last year&gt;" sap:VirtualizedContainerService.HintSize="434,350" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[in_Config(&quot;Extract records&quot;).ToString+item.ToString+&quot;\&quot;+in_Current_time+&quot;particular_year_processingrecords.xlsx&quot;]">
+                                  <ui:ExcelApplicationScope.Body>
+                                    <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="00175:Do" sap:VirtualizedContainerService.HintSize="376,241" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00176:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_6">
+                                          <TextExpression.Namespaces>
+                                            <sco:Collection x:TypeArguments="x:String">
+                                              <x:String>System.Activities</x:String>
+                                              <x:String>System.Activities.Statements</x:String>
+                                              <x:String>System.Activities.Expressions</x:String>
+                                              <x:String>System.Activities.Validation</x:String>
+                                              <x:String>System.Activities.XamlIntegration</x:String>
+                                              <x:String>Microsoft.VisualBasic.Activities</x:String>
+                                              <x:String>System</x:String>
+                                              <x:String>System.Collections.Generic</x:String>
+                                              <x:String>System.Data</x:String>
+                                              <x:String>System.Diagnostics</x:String>
+                                              <x:String>System.IO</x:String>
+                                              <x:String>System.Linq</x:String>
+                                              <x:String>System.Management.Automation</x:String>
+                                              <x:String>System.Net.Mail</x:String>
+                                              <x:String>System.Xml</x:String>
+                                              <x:String>System.Xml.Linq</x:String>
+                                              <x:String>UiPath.Library</x:String>
+                                              <x:String>System.Windows.Markup</x:String>
+                                            </sco:Collection>
+                                          </TextExpression.Namespaces>
+                                          <TextExpression.References>
+                                            <sco:Collection x:TypeArguments="AssemblyReference">
+                                              <AssemblyReference>System.Activities</AssemblyReference>
+                                              <AssemblyReference>mscorlib</AssemblyReference>
+                                              <AssemblyReference>System.Data</AssemblyReference>
+                                              <AssemblyReference>System</AssemblyReference>
+                                              <AssemblyReference>System.Core</AssemblyReference>
+                                              <AssemblyReference>System.Management.Automation</AssemblyReference>
+                                              <AssemblyReference>System.Xml</AssemblyReference>
+                                              <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                                              <AssemblyReference>UiPath.Library</AssemblyReference>
+                                              <AssemblyReference>PresentationFramework</AssemblyReference>
+                                              <AssemblyReference>WindowsBase</AssemblyReference>
+                                              <AssemblyReference>PresentationCore</AssemblyReference>
+                                              <AssemblyReference>System.Xaml</AssemblyReference>
+                                            </sco:Collection>
+                                          </TextExpression.References>
+                                          <sap2010:WorkflowViewState.ViewStateManager>
+                                            <sap2010:ViewStateManager>
+                                              <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+                                            </sap2010:ViewStateManager>
+                                          </sap2010:WorkflowViewState.ViewStateManager>
+                                        </Delay>
+                                        <ui:ExcelWriteRange AddHeaders="True" DataTable="[dt_Extract_records]" DisplayName="00177:Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A1" />
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ExcelApplicationScope.Body>
+                                </ui:ExcelApplicationScope>
+                              </If.Then>
+                              <If.Else>
+                                <ui:AppendRange DataTable="[dt_Extract_records]" DisplayName="00178:Append Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Sheet1" WorkbookPath="[in_Config(&quot;Extract records&quot;).ToString+item.ToString+&quot;\&quot;+in_Current_time+&quot;particular_year_processingrecords.xlsx&quot;]" />
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEach.Body>
+                    </ui:ForEach>
+                    <ui:Comment DisplayName="00179:Comment" sap:VirtualizedContainerService.HintSize="891,55" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Add attachment" />
+                    <AddToCollection x:TypeArguments="x:String" Collection="[list_attachments]" DisplayName="00180:Add To Collection" sap:VirtualizedContainerService.HintSize="891,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="[in_Config(&quot;Extract records&quot;).ToString+item.ToString+&quot;\&quot;+in_Current_time+&quot;particular_year_processingrecords.xlsx&quot;]" />
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <ui:LogMessage DisplayName="00181:Log Message&lt;no file&gt;" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[CStr(iif(in_Config(&quot;language&quot;).ToString.Trim.Equals(&quot;L&quot;),in_Config(&quot;language_Processing_record_file_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Trim.Equals(&quot;E&quot;),in_Config(&quot;language_Processing_record_file_E_Message&quot;).ToString,in_Config(&quot;language_Processing_record_file_T_Message&quot;).ToString)))]" />
+                </If.Else>
+              </If>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+      </ui:ForEach>
+      <ui:Comment DisplayName="00182:Comment" sap:VirtualizedContainerService.HintSize="1390,55" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Two years of data" />
+      <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00183:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="1390,22" sap2010:WorkflowViewState.IdRef="Delay_7">
+        <TextExpression.Namespaces>
+          <sco:Collection x:TypeArguments="x:String">
+            <x:String>System.Activities</x:String>
+            <x:String>System.Activities.Statements</x:String>
+            <x:String>System.Activities.Expressions</x:String>
+            <x:String>System.Activities.Validation</x:String>
+            <x:String>System.Activities.XamlIntegration</x:String>
+            <x:String>Microsoft.VisualBasic.Activities</x:String>
+            <x:String>System</x:String>
+            <x:String>System.Collections.Generic</x:String>
+            <x:String>System.Data</x:String>
+            <x:String>System.Diagnostics</x:String>
+            <x:String>System.IO</x:String>
+            <x:String>System.Linq</x:String>
+            <x:String>System.Management.Automation</x:String>
+            <x:String>System.Net.Mail</x:String>
+            <x:String>System.Xml</x:String>
+            <x:String>System.Xml.Linq</x:String>
+            <x:String>UiPath.Library</x:String>
+            <x:String>System.Windows.Markup</x:String>
+          </sco:Collection>
+        </TextExpression.Namespaces>
+        <TextExpression.References>
+          <sco:Collection x:TypeArguments="AssemblyReference">
+            <AssemblyReference>System.Activities</AssemblyReference>
+            <AssemblyReference>mscorlib</AssemblyReference>
+            <AssemblyReference>System.Data</AssemblyReference>
+            <AssemblyReference>System</AssemblyReference>
+            <AssemblyReference>System.Core</AssemblyReference>
+            <AssemblyReference>System.Management.Automation</AssemblyReference>
+            <AssemblyReference>System.Xml</AssemblyReference>
+            <AssemblyReference>System.Xml.Linq</AssemblyReference>
+            <AssemblyReference>UiPath.Library</AssemblyReference>
+            <AssemblyReference>PresentationFramework</AssemblyReference>
+            <AssemblyReference>WindowsBase</AssemblyReference>
+            <AssemblyReference>PresentationCore</AssemblyReference>
+            <AssemblyReference>System.Xaml</AssemblyReference>
+          </sco:Collection>
+        </TextExpression.References>
+        <sap2010:WorkflowViewState.ViewStateManager>
+          <sap2010:ViewStateManager>
+            <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+          </sap2010:ViewStateManager>
+        </sap2010:WorkflowViewState.ViewStateManager>
+      </Delay>
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="00184:Invoke Dynamicattachments workflow" sap:VirtualizedContainerService.HintSize="1390,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Common module\Dynamicattachments.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <OutArgument x:TypeArguments="snm:MailMessage" x:Key="mailMessage">
+            <mva:VisualBasicReference x:TypeArguments="snm:MailMessage" ExpressionText="out_MailMessage" />
+          </OutArgument>
+          <InArgument x:TypeArguments="scg:List(x:String)" x:Key="list">
+            <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="list_attachments" />
+          </InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00185:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="1390,22" sap2010:WorkflowViewState.IdRef="Delay_8">
+        <TextExpression.Namespaces>
+          <sco:Collection x:TypeArguments="x:String">
+            <x:String>System.Activities</x:String>
+            <x:String>System.Activities.Statements</x:String>
+            <x:String>System.Activities.Expressions</x:String>
+            <x:String>System.Activities.Validation</x:String>
+            <x:String>System.Activities.XamlIntegration</x:String>
+            <x:String>Microsoft.VisualBasic.Activities</x:String>
+            <x:String>System</x:String>
+            <x:String>System.Collections.Generic</x:String>
+            <x:String>System.Data</x:String>
+            <x:String>System.Diagnostics</x:String>
+            <x:String>System.IO</x:String>
+            <x:String>System.Linq</x:String>
+            <x:String>System.Management.Automation</x:String>
+            <x:String>System.Net.Mail</x:String>
+            <x:String>System.Xml</x:String>
+            <x:String>System.Xml.Linq</x:String>
+            <x:String>UiPath.Library</x:String>
+            <x:String>System.Windows.Markup</x:String>
+          </sco:Collection>
+        </TextExpression.Namespaces>
+        <TextExpression.References>
+          <sco:Collection x:TypeArguments="AssemblyReference">
+            <AssemblyReference>System.Activities</AssemblyReference>
+            <AssemblyReference>mscorlib</AssemblyReference>
+            <AssemblyReference>System.Data</AssemblyReference>
+            <AssemblyReference>System</AssemblyReference>
+            <AssemblyReference>System.Core</AssemblyReference>
+            <AssemblyReference>System.Management.Automation</AssemblyReference>
+            <AssemblyReference>System.Xml</AssemblyReference>
+            <AssemblyReference>System.Xml.Linq</AssemblyReference>
+            <AssemblyReference>UiPath.Library</AssemblyReference>
+            <AssemblyReference>PresentationFramework</AssemblyReference>
+            <AssemblyReference>WindowsBase</AssemblyReference>
+            <AssemblyReference>PresentationCore</AssemblyReference>
+            <AssemblyReference>System.Xaml</AssemblyReference>
+          </sco:Collection>
+        </TextExpression.References>
+        <sap2010:WorkflowViewState.ViewStateManager>
+          <sap2010:ViewStateManager>
+            <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+          </sap2010:ViewStateManager>
+        </sap2010:WorkflowViewState.ViewStateManager>
+      </Delay>
+    </Sequence>
+  </Sequence>
+</Activity>

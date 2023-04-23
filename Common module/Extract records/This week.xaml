@@ -1,0 +1,274 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="This_week" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_Current_time" Type="InArgument(x:String)" />
+    <x:Property Name="out_MailMessage" Type="OutArgument(snm:MailMessage)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1492,2313</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>This_week_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="30">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="This_week" sap:VirtualizedContainerService.HintSize="989,2148" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="00033:Sequence a week" sap:VirtualizedContainerService.HintSize="947,2056" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_Extract_records" />
+        <Variable x:TypeArguments="scg:List(x:String)" Name="list_attachments">
+          <Variable.Default>
+            <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new list(of string)" />
+          </Variable.Default>
+        </Variable>
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:Comment DisplayName="00034:Comment" sap:VirtualizedContainerService.HintSize="905,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Extract current period data" />
+      <ui:LogMessage DisplayName="Log Message print extract current" sap:VirtualizedContainerService.HintSize="905,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[CStr(iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_extract_week_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_extract_week_E_Message&quot;).ToString,in_Config(&quot;language_extract_week_T_Message&quot;).ToString)))]" />
+      <If Condition="[new FileInfo(in_Config(&quot;Processing records&quot;).ToString+now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+now.ToString(&quot;yyyyMM&quot;)+&quot;processingrecords.xlsx&quot;).Exists]" DisplayName="00035:If Is there a data file for this week " sap:VirtualizedContainerService.HintSize="905,1305" sap2010:WorkflowViewState.IdRef="If_2">
+        <If.Then>
+          <Sequence DisplayName="00036:Sequence a week&lt;read data&gt; " sap:VirtualizedContainerService.HintSize="526,1147" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="ui:WorkbookApplication" Name="Workbook" />
+              <Variable x:TypeArguments="sd:DataTable" Name="dt_Screening_records" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="00037:Excel Application Scope&lt;a week&gt;" sap:VirtualizedContainerService.HintSize="484,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Workbook="[Workbook]" WorkbookPath="[in_Config(&quot;Processing records&quot;).ToString+now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+now.ToString(&quot;yyyyMM&quot;)+&quot;processingrecords.xlsx&quot;]">
+              <ui:ExcelApplicationScope.Body>
+                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="00038:Do" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_Extract_records]" DisplayName="00039:Read Range" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="[Workbook.GetSheets(0)]">
+                      <ui:ExcelReadRange.Range>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </ui:ExcelReadRange.Range>
+                    </ui:ExcelReadRange>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ExcelApplicationScope.Body>
+            </ui:ExcelApplicationScope>
+            <ui:Comment DisplayName="00040:Comment" sap:VirtualizedContainerService.HintSize="484,55" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Get the record data of this week" />
+            <Assign DisplayName="00041:Assign This week" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[dt_Screening_records]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable">[dt_Extract_records.Select("[當天日期]&gt;='"+DateTime.Now.AddDays(1 - CInt(IIf(Convert.ToInt32(DateTime.Now.DayOfWeek.ToString("d")) = 0, 7, Convert.ToInt32(DateTime.Now.DayOfWeek.ToString("d"))))).ToString("yyyy/MM/dd")+"' and [當天日期]&lt;='"+DateTime.Now.AddDays(1 - CInt(IIf(Convert.ToInt32(DateTime.Now.DayOfWeek.ToString("d")) = 0, 7, Convert.ToInt32(DateTime.Now.DayOfWeek.ToString("d"))))).AddDays(6).ToString("yyyy/MM/dd")+"'").CopyToDataTable]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:Comment DisplayName="00042:Comment" sap:VirtualizedContainerService.HintSize="484,55" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Save extraction records" />
+            <If Condition="[not new FileInfo(in_Config(&quot;Extract records&quot;).ToString+Now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+in_Current_time+&quot;a_week_processingrecords.xlsx&quot;).Exists]" DisplayName="00043:If Does the file exist" sap:VirtualizedContainerService.HintSize="484,465" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="00044:Excel Application Scope&lt;a week&gt;" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[in_Config(&quot;Extract records&quot;).ToString+Now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+in_Current_time+&quot;a_week_processingrecords.xlsx&quot;]">
+                  <ui:ExcelApplicationScope.Body>
+                    <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="00045:Do" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ExcelWriteRange AddHeaders="True" DataTable="[dt_Screening_records]" DisplayName="00046:Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A1" />
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ExcelApplicationScope.Body>
+                </ui:ExcelApplicationScope>
+              </If.Then>
+            </If>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <ui:LogMessage DisplayName="00047:Log Message print File does not exist" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[CSTR(iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_Processing_record_file_L_Message&quot;).ToString,IIF(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_Processing_record_file_E_Message&quot;).ToString,in_Config(&quot;language_Processing_record_file_T_Message&quot;).ToString)))]" />
+        </If.Else>
+      </If>
+      <ui:Comment DisplayName="00048:Comment" sap:VirtualizedContainerService.HintSize="905,55" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Add attachment" />
+      <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00049:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="905,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+        <TextExpression.Namespaces>
+          <sco:Collection x:TypeArguments="x:String">
+            <x:String>System.Activities</x:String>
+            <x:String>System.Activities.Statements</x:String>
+            <x:String>System.Activities.Expressions</x:String>
+            <x:String>System.Activities.Validation</x:String>
+            <x:String>System.Activities.XamlIntegration</x:String>
+            <x:String>Microsoft.VisualBasic.Activities</x:String>
+            <x:String>System</x:String>
+            <x:String>System.Collections.Generic</x:String>
+            <x:String>System.Data</x:String>
+            <x:String>System.Diagnostics</x:String>
+            <x:String>System.IO</x:String>
+            <x:String>System.Linq</x:String>
+            <x:String>System.Management.Automation</x:String>
+            <x:String>System.Net.Mail</x:String>
+            <x:String>System.Xml</x:String>
+            <x:String>System.Xml.Linq</x:String>
+            <x:String>UiPath.Library</x:String>
+            <x:String>System.Windows.Markup</x:String>
+          </sco:Collection>
+        </TextExpression.Namespaces>
+        <TextExpression.References>
+          <sco:Collection x:TypeArguments="AssemblyReference">
+            <AssemblyReference>System.Activities</AssemblyReference>
+            <AssemblyReference>mscorlib</AssemblyReference>
+            <AssemblyReference>System.Data</AssemblyReference>
+            <AssemblyReference>System</AssemblyReference>
+            <AssemblyReference>System.Core</AssemblyReference>
+            <AssemblyReference>System.Management.Automation</AssemblyReference>
+            <AssemblyReference>System.Xml</AssemblyReference>
+            <AssemblyReference>System.Xml.Linq</AssemblyReference>
+            <AssemblyReference>UiPath.Library</AssemblyReference>
+            <AssemblyReference>PresentationFramework</AssemblyReference>
+            <AssemblyReference>WindowsBase</AssemblyReference>
+            <AssemblyReference>PresentationCore</AssemblyReference>
+            <AssemblyReference>System.Xaml</AssemblyReference>
+          </sco:Collection>
+        </TextExpression.References>
+        <sap2010:WorkflowViewState.ViewStateManager>
+          <sap2010:ViewStateManager>
+            <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+          </sap2010:ViewStateManager>
+        </sap2010:WorkflowViewState.ViewStateManager>
+      </Delay>
+      <AddToCollection x:TypeArguments="x:String" Collection="[list_attachments]" DisplayName="00050:Add To Collection" sap:VirtualizedContainerService.HintSize="905,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[in_Config(&quot;Extract records&quot;).ToString+Now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+in_Current_time+&quot;a_week_processingrecords.xlsx&quot;]" />
+      <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00051:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="905,22" sap2010:WorkflowViewState.IdRef="Delay_2">
+        <TextExpression.Namespaces>
+          <sco:Collection x:TypeArguments="x:String">
+            <x:String>System.Activities</x:String>
+            <x:String>System.Activities.Statements</x:String>
+            <x:String>System.Activities.Expressions</x:String>
+            <x:String>System.Activities.Validation</x:String>
+            <x:String>System.Activities.XamlIntegration</x:String>
+            <x:String>Microsoft.VisualBasic.Activities</x:String>
+            <x:String>System</x:String>
+            <x:String>System.Collections.Generic</x:String>
+            <x:String>System.Data</x:String>
+            <x:String>System.Diagnostics</x:String>
+            <x:String>System.IO</x:String>
+            <x:String>System.Linq</x:String>
+            <x:String>System.Management.Automation</x:String>
+            <x:String>System.Net.Mail</x:String>
+            <x:String>System.Xml</x:String>
+            <x:String>System.Xml.Linq</x:String>
+            <x:String>UiPath.Library</x:String>
+            <x:String>System.Windows.Markup</x:String>
+          </sco:Collection>
+        </TextExpression.Namespaces>
+        <TextExpression.References>
+          <sco:Collection x:TypeArguments="AssemblyReference">
+            <AssemblyReference>System.Activities</AssemblyReference>
+            <AssemblyReference>mscorlib</AssemblyReference>
+            <AssemblyReference>System.Data</AssemblyReference>
+            <AssemblyReference>System</AssemblyReference>
+            <AssemblyReference>System.Core</AssemblyReference>
+            <AssemblyReference>System.Management.Automation</AssemblyReference>
+            <AssemblyReference>System.Xml</AssemblyReference>
+            <AssemblyReference>System.Xml.Linq</AssemblyReference>
+            <AssemblyReference>UiPath.Library</AssemblyReference>
+            <AssemblyReference>PresentationFramework</AssemblyReference>
+            <AssemblyReference>WindowsBase</AssemblyReference>
+            <AssemblyReference>PresentationCore</AssemblyReference>
+            <AssemblyReference>System.Xaml</AssemblyReference>
+          </sco:Collection>
+        </TextExpression.References>
+        <sap2010:WorkflowViewState.ViewStateManager>
+          <sap2010:ViewStateManager>
+            <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+          </sap2010:ViewStateManager>
+        </sap2010:WorkflowViewState.ViewStateManager>
+      </Delay>
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="00052:Invoke Dynamicattachments workflow" sap:VirtualizedContainerService.HintSize="905,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Common module\Dynamicattachments.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <OutArgument x:TypeArguments="snm:MailMessage" x:Key="mailMessage">
+            <mva:VisualBasicReference x:TypeArguments="snm:MailMessage" ExpressionText="out_MailMessage" />
+          </OutArgument>
+          <InArgument x:TypeArguments="scg:List(x:String)" x:Key="list">
+            <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="list_attachments" />
+          </InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+  </Sequence>
+</Activity>

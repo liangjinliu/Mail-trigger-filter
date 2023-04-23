@@ -1,0 +1,222 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="No_Permission_Exception" this:No_Permission_Exception.dt_RecordKeeping="[new DataTable]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="permission_exception" Type="InArgument(s:Exception)" />
+    <x:Property Name="Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="dt_RecordKeeping" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="dr_ServiceCatalogoe" Type="InOutArgument(sd:DataRow)" />
+    <x:Property Name="mail" Type="InArgument(snm:MailMessage)" />
+    <x:Property Name="dr_MailTemplate" Type="InArgument(sd:DataRow)" />
+    <x:Property Name="dt_MailTemplate" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="Appellation" Type="InArgument(x:String)" />
+    <x:Property Name="in_SendTo" Type="InArgument(x:String)" />
+    <x:Property Name="in_Current_year" Type="InArgument(x:String)" />
+    <x:Property Name="in_Current_month" Type="InArgument(x:String)" />
+    <x:Property Name="in_Current_time" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1191,2778</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>No_Permission_Exception_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="No_Permission_Exception" sap:VirtualizedContainerService.HintSize="833,2613" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="791,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// No Permission Exception" />
+    <If Condition="[permission_exception isnot Nothing]" DisplayName="00053:If No permission" sap:VirtualizedContainerService.HintSize="791,2426" sap2010:WorkflowViewState.IdRef="If_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="00054:Sequence permission exception mail" sap:VirtualizedContainerService.HintSize="755,2246" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:Comment DisplayName="00055:Comment" sap:VirtualizedContainerService.HintSize="713,55" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// No Permission record" />
+          <ui:LogMessage DisplayName="00056:Log Message Add no permission record" sap:VirtualizedContainerService.HintSize="713,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_add_data_row_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_add_data_row_E_Message&quot;).ToString,Config(&quot;language_add_data_row_T_Message&quot;).ToString)))]" />
+          <ui:LogMessage DisplayName="Log Message Mail date" sap:VirtualizedContainerService.HintSize="713,93" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[mail.Date.ToString]" />
+          <ui:LogMessage DisplayName="Log Message ServiceCatalogoe (States)" sap:VirtualizedContainerService.HintSize="713,93" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[dr_ServiceCatalogoe(&quot;States&quot;).ToString]" />
+          <ui:LogMessage DisplayName="Log Message Print Add Data Row" sap:VirtualizedContainerService.HintSize="713,93" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[{DateTime.Now.ToString(&quot;yyyy/MM/dd&quot;),mail.Subject.ToString,mail.Date.ToString,&quot;&quot;,&quot;&quot;,mail.Sender.User,mail.Sender.Address.ToString,mail.Body.ToString.Trim,dr_ServiceCatalogoe(&quot;States&quot;).ToString,permission_exception.Message.ToString,&quot;&quot;,&quot;&quot;}]" />
+          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{DateTime.Now.ToString(&quot;yyyy/MM/dd&quot;),mail.Subject.ToString,mail.Date.ToString,&quot;&quot;,&quot;&quot;,mail.Sender.User,mail.Sender.Address.ToString,mail.Body.ToString.Trim,dr_ServiceCatalogoe(&quot;States&quot;).ToString,permission_exception.Message.ToString,&quot;&quot;,&quot;&quot;}]" DataTable="[dt_RecordKeeping]" DisplayName="00057:Add Data Row" sap:VirtualizedContainerService.HintSize="713,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+          <If Condition="[new FileInfo(Config(&quot;Processing records&quot;).ToString+now.ToString(&quot;yyyy&quot;).ToString+&quot;\&quot;+now.ToString(&quot;yyyyMM&quot;)+&quot;processingrecords.xlsx&quot;).Exists]" DisplayName="00058:If Does the processing record file exist " sap:VirtualizedContainerService.HintSize="713,275" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <ui:AppendRange DataTable="[dt_RecordKeeping]" DisplayName="00059:Append Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Sheet1" WorkbookPath="[Config(&quot;Processing records&quot;).ToString+now.ToString(&quot;yyyy&quot;).ToString+&quot;\&quot;+now.ToString(&quot;yyyyMM&quot;)+&quot;processingrecords.xlsx&quot;]" />
+            </If.Then>
+            <If.Else>
+              <ui:WriteRange AddHeaders="True" DataTable="[dt_RecordKeeping]" DisplayName="00060:Write Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[Config(&quot;Processing records&quot;).ToString+now.ToString(&quot;yyyy&quot;).ToString+&quot;\&quot;+now.ToString(&quot;yyyyMM&quot;)+&quot;processingrecords.xlsx&quot;]" />
+            </If.Else>
+          </If>
+          <ui:LogMessage DisplayName="00061:Log Message print processing record" sap:VirtualizedContainerService.HintSize="713,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_processing_log_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_processing_log_E_Message&quot;).ToString,Config(&quot;language_processing_log_T_Message&quot;).ToString)))]" />
+          <ui:Comment DisplayName="00062:Comment" sap:VirtualizedContainerService.HintSize="713,56" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Send warning message" />
+          <Assign DisplayName="00063:Assign&lt;Nopermission_Error001&gt;" sap:VirtualizedContainerService.HintSize="713,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataRow">[dr_MailTemplate]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataRow">[dt_MailTemplate.Rows.OfType(Of System.Data.DataRow).Where(Function(r) r("Mail ID").ToString.Equals("Nopermission_Error001")).FirstOrDefault]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="00064:Log Message print body message" sap:VirtualizedContainerService.HintSize="713,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[dr_MailTemplate(&quot;Mail Body&quot;).ToString.Trim.Replace(&quot;User&quot;,mail.Sender.User).Replace(&quot;StartTime&quot;,mail.Date.ToString).Replace(&quot;Message Title Format&quot;,mail.Subject.ToString).Replace(&quot;Email&quot;,Config(&quot;administrator_email&quot;).ToString)]" />
+          <ui:Comment DisplayName="00066:Comment" sap:VirtualizedContainerService.HintSize="713,56" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// No permission" />
+          <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00067:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="713,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+            <TextExpression.Namespaces>
+              <sco:Collection x:TypeArguments="x:String">
+                <x:String>System.Activities</x:String>
+                <x:String>System.Activities.Statements</x:String>
+                <x:String>System.Activities.Expressions</x:String>
+                <x:String>System.Activities.Validation</x:String>
+                <x:String>System.Activities.XamlIntegration</x:String>
+                <x:String>Microsoft.VisualBasic.Activities</x:String>
+                <x:String>System</x:String>
+                <x:String>System.Collections.Generic</x:String>
+                <x:String>System.Data</x:String>
+                <x:String>System.Diagnostics</x:String>
+                <x:String>System.IO</x:String>
+                <x:String>System.Linq</x:String>
+                <x:String>System.Management.Automation</x:String>
+                <x:String>System.Net.Mail</x:String>
+                <x:String>System.Xml</x:String>
+                <x:String>System.Xml.Linq</x:String>
+                <x:String>UiPath.Library</x:String>
+                <x:String>System.Windows.Markup</x:String>
+              </sco:Collection>
+            </TextExpression.Namespaces>
+            <TextExpression.References>
+              <sco:Collection x:TypeArguments="AssemblyReference">
+                <AssemblyReference>System.Activities</AssemblyReference>
+                <AssemblyReference>mscorlib</AssemblyReference>
+                <AssemblyReference>System.Data</AssemblyReference>
+                <AssemblyReference>System</AssemblyReference>
+                <AssemblyReference>System.Core</AssemblyReference>
+                <AssemblyReference>System.Management.Automation</AssemblyReference>
+                <AssemblyReference>System.Xml</AssemblyReference>
+                <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                <AssemblyReference>UiPath.Library</AssemblyReference>
+                <AssemblyReference>PresentationFramework</AssemblyReference>
+                <AssemblyReference>WindowsBase</AssemblyReference>
+                <AssemblyReference>PresentationCore</AssemblyReference>
+                <AssemblyReference>System.Xaml</AssemblyReference>
+              </sco:Collection>
+            </TextExpression.References>
+            <sap2010:WorkflowViewState.ViewStateManager>
+              <sap2010:ViewStateManager>
+                <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+              </sap2010:ViewStateManager>
+            </sap2010:WorkflowViewState.ViewStateManager>
+          </Delay>
+          <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="00068:Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="713,87" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_1" MailFolder="[Config(&quot;mailbox_No_permission&quot;).ToString]" MailMessage="[mail]" />
+          <ui:Comment sap:VirtualizedContainerService.HintSize="713,56" sap2010:WorkflowViewState.IdRef="Comment_5" Text="// Send Eamil &lt;No permission&gt;" />
+          <If Condition="[new FileInfo(Config(&quot;Processing accessories&quot;).ToString+in_Current_year+&quot;\&quot;+in_Current_month+&quot;\&quot;+in_Current_time+&quot;Execute Table.xlsx&quot;).Exists]" DisplayName="If Execute Table exists " sap:VirtualizedContainerService.HintSize="713,307" sap2010:WorkflowViewState.IdRef="If_3">
+            <If.Then>
+              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[dr_MailTemplate(&quot;Mail Body&quot;).ToString.Trim.Replace(&quot;User&quot;,Appellation).Replace(&quot;StartTime&quot;,mail.Date.ToString).Replace(&quot;Message Title Format&quot;,mail.Subject.ToString).Replace(&quot;Email&quot;,Config(&quot;administrator_email&quot;).ToString)]" DisplayName="00065:Send Outlook Mail Message &lt;No permission exception mail&gt;" sap:VirtualizedContainerService.HintSize="334,147" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[dr_MailTemplate(&quot;Mail Subject&quot;).ToString.Trim.Replace(&quot;Message Title Format&quot;,mail.Subject.ToString)]" To="[in_SendTo]">
+                <ui:SendOutlookMail.Files>
+                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                    <InArgument x:TypeArguments="x:String">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;Processing accessories&quot;).ToString+in_Current_year+&quot;\&quot;+in_Current_month+&quot;\&quot;+in_Current_time+&quot;Execute Table.xlsx&quot;" />
+                    </InArgument>
+                  </scg:List>
+                </ui:SendOutlookMail.Files>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:SendOutlookMail>
+            </If.Then>
+            <If.Else>
+              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[dr_MailTemplate(&quot;Mail Body&quot;).ToString.Trim.Replace(&quot;User&quot;,Appellation).Replace(&quot;StartTime&quot;,mail.Date.ToString).Replace(&quot;Message Title Format&quot;,mail.Subject.ToString).Replace(&quot;Email&quot;,Config(&quot;administrator_email&quot;).ToString)]" DisplayName="00065:Send Outlook Mail Message &lt;No permission exception mail&gt;" sap:VirtualizedContainerService.HintSize="334,147" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[dr_MailTemplate(&quot;Mail Subject&quot;).ToString.Trim.Replace(&quot;Message Title Format&quot;,mail.Subject.ToString)]" To="[in_SendTo]">
+                <ui:SendOutlookMail.Files>
+                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                </ui:SendOutlookMail.Files>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:SendOutlookMail>
+            </If.Else>
+          </If>
+        </Sequence>
+      </If.Then>
+    </If>
+  </Sequence>
+</Activity>

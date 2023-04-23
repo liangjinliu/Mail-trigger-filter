@@ -1,0 +1,303 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TMQ_Search_ICS_Job" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1226,2772" sap2010:WorkflowViewState.IdRef="TMQ_Search_ICS_Job_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TMQ_Search_ICS_Job" sap:VirtualizedContainerService.HintSize="519,2607" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="477,1132" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser '       Page'" sap:VirtualizedContainerService.HintSize="435,1040" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="1064afd48acb51efa8f12b125dcb3ea0" Selector="&lt;html title='部门工作列表' /&gt;">
+        <ui:BrowserScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="401,894" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  ctl00_main_drop...'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="資訊系統(IS)科">
+                <ui:SelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="4">
+                    <x:String>--请选择--</x:String>
+                    <x:String>資訊科技(IT)科</x:String>
+                    <x:String>資訊系統(IS)科</x:String>
+                  </scg:List>
+                </ui:SelectItem.Items>
+                <ui:SelectItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cb4792cd-a6e3-4f83-be82-b0a261c23ae9" InformativeScreenshot="6aa80732b47de7422e6f7442ca1fac97" Selector="&lt;webctrl id='ctl00_main_drop_group' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:SelectItem.Target>
+              </ui:SelectItem>
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  ctl00_main_drop...'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="轉換/新增權限[4]">
+                <ui:SelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="16">
+                    <x:String>--请选择--</x:String>
+                    <x:String>申請/安裝軟件類[1]</x:String>
+                    <x:String>轉換/新增權限[4]</x:String>
+                    <x:String>雜項服務要求[5]</x:String>
+                    <x:String>程式及系統維護[30]</x:String>
+                    <x:String>要求數據[31]</x:String>
+                    <x:String>資料維護[32]</x:String>
+                    <x:String>日常運作及檢測[50]</x:String>
+                    <x:String>內部其他雜項[51]</x:String>
+                    <x:String>新增系統[52]</x:String>
+                    <x:String>項目規範及跟進[53]</x:String>
+                  </scg:List>
+                </ui:SelectItem.Items>
+                <ui:SelectItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="27959e67-0e26-4943-9efd-b09c8ad81aba" InformativeScreenshot="412802aafbd5ace7d32884b234582f9e" Selector="&lt;webctrl id='ctl00_main_drop_prob_type_large' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:SelectItem.Target>
+              </ui:SelectItem>
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  ctl00_main_drop...'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="ICS/POS系統權限 (100)">
+                <ui:SelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="32">
+                    <x:String>--请选择--</x:String>
+                    <x:String>帳房權限 (35)</x:String>
+                    <x:String>咭鐘系統權限 (36)</x:String>
+                    <x:String>OPS 系統權限 (37)</x:String>
+                    <x:String>總帳(GLS)系統權限 (38)</x:String>
+                    <x:String>內聯網權限 (39)</x:String>
+                    <x:String>其他 - 轉換/新增權限 (40)</x:String>
+                    <x:String>ICS/POS系統權限 (100)</x:String>
+                    <x:String>CSS 總務物料系統權限 (102)</x:String>
+                    <x:String>TMQ系統權限 (147)</x:String>
+                    <x:String>BMS系統權限 (531)</x:String>
+                    <x:String>福利系統權限 (3275)</x:String>
+                    <x:String>RCS 系統權限 (3276)</x:String>
+                    <x:String>FBI系統權限 (4695)</x:String>
+                    <x:String>法律事務部TMQ系統審批權限 (5006)</x:String>
+                    <x:String>CC-Portal權限 (5030)</x:String>
+                    <x:String>EDP權限 (5033)</x:String>
+                    <x:String>Blackberry PIN維護 (5034)</x:String>
+                    <x:String>SKU系統權限 (5287)</x:String>
+                    <x:String>定價委員會TMQ系統權限 (5523)</x:String>
+                    <x:String>ServiceNow系統權限 (5550)</x:String>
+                  </scg:List>
+                </ui:SelectItem.Items>
+                <ui:SelectItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9fe45564-8a59-44a3-8bd7-2e1cd9ae65dd" InformativeScreenshot="9d5b6d10ed99ab74397695e24c948989" Selector="&lt;webctrl id='ctl00_main_drop_prob_type' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:SelectItem.Target>
+              </ui:SelectItem>
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  ctl00_main_drop...'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_4" Item="审批通过">
+                <ui:SelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="16">
+                    <x:String>未跟进</x:String>
+                    <x:String>审批通过</x:String>
+                    <x:String>处理中</x:String>
+                    <x:String>暂停</x:String>
+                    <x:String>服务完成</x:String>
+                    <x:String>所有状态</x:String>
+                    <x:String>等待审批</x:String>
+                    <x:String>等待拒绝回应</x:String>
+                    <x:String>K3系统审批中</x:String>
+                    <x:String>用户确认付款中</x:String>
+                    <x:String>取消</x:String>
+                    <x:String>验收不通过</x:String>
+                    <x:String>等待验收</x:String>
+                  </scg:List>
+                </ui:SelectItem.Items>
+                <ui:SelectItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="eca08f8e-ecaa-4eda-9ca8-cb4e2df7f5d4" InformativeScreenshot="cfcd518bb214196c591143518d7f8458" Selector="&lt;webctrl id='ctl00_main_drop_status' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:SelectItem.Target>
+              </ui:SelectItem>
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  ctl00_main_btn_s...'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition OffsetX="29" OffsetY="11" Position="TopLeft" />
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c7c6119c-e8ea-4a0e-8bae-bdda4eca3c47" InformativeScreenshot="e955654d956c56821c30bef472ac55ce" Selector="&lt;webctrl idx='1' tag='INPUT' type='submit' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+            </Sequence>
+          </ActivityAction>
+        </ui:BrowserScope.Body>
+      </ui:BrowserScope>
+    </Sequence>
+    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="477,1343" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser '       Page'" sap:VirtualizedContainerService.HintSize="434,636" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="63bb668685c6edb97aec9deb7cd5c1f6" Selector="&lt;html title='部门工作列表' /&gt;">
+        <ui:BrowserScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,490" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition OffsetX="33" OffsetY="6" Position="TopLeft" />
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ad883391-7c09-4aff-8e34-c5c8fd952bb2" InformativeScreenshot="4a65da837084b0429b2fb007f298639b" Selector="&lt;webctrl omit:style='COLOR: black' omit:parentid='ctl00_main_Gvw_Dept_Task' tag='A' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  dl_File_Detail_ctl00...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition OffsetX="120" OffsetY="7" Position="TopLeft" />
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d68ea108-a96a-4b97-8300-42d9d3a9b266" InformativeScreenshot="dc6b09e99a9c1542fe62155330a958f6" Selector="&lt;webctrl id='dl_File_Detail_ctl00_lbtn_down' tag='A' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Open'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition OffsetX="54" OffsetY="17" Position="TopLeft" />
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7e3e8f0c-ef48-429d-892a-9452feaf452b" InformativeScreenshot="2971ad80a45445bb49cb79032138248b" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='部门工作列表 - Internet Explorer' /&gt;&lt;wnd aaname='Notification' cls='DirectUIHWND' /&gt;&lt;ctrl automationid='IENotificationBar' /&gt;&lt;ctrl name='Open' role='push button' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+            </Sequence>
+          </ActivityAction>
+        </ui:BrowserScope.Body>
+      </ui:BrowserScope>
+      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window '       In Ieframe'" sap:VirtualizedContainerService.HintSize="434,229" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="edea7d1d0551f9b1ff50b1ebca84ff4d" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='部门工作列表 - Internet Explorer' /&gt;">
+        <ui:WindowScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+          </ActivityAction>
+        </ui:WindowScope.Body>
+      </ui:WindowScope>
+      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window '      013 Xlmain'" sap:VirtualizedContainerService.HintSize="434,306" sap2010:WorkflowViewState.IdRef="WindowScope_2" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='副本副本副本0138-UserRight-ICS秋红  [Protected View] - Excel' /&gt;">
+        <ui:WindowScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Enable Editing'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition OffsetX="47" OffsetY="8" Position="TopLeft" />
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6da2076b-7473-4df5-8173-310cd6066805" InformativeScreenshot="facc32d84213fb620b8e8d5c737b737a" Selector="&lt;uia cls='MsoCommandBar' name=' ' /&gt;&lt;uia cls='NetUIElement' name='Protected View' /&gt;&lt;uia cls='NetUISimpleButton' name='Enable Editing' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+            </Sequence>
+          </ActivityAction>
+        </ui:WindowScope.Body>
+      </ui:WindowScope>
+    </Sequence>
+  </Sequence>
+</Activity>

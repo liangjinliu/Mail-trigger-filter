@@ -1,0 +1,345 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Are_you_trained" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="邮件列表" Name="in_maillist" Type="InArgument(scg:List(snm:MailMessage))" />
+    <x:Property sap2010:Annotation.AnnotationText="服务目录" Name="in_dtServiceCatalogoe" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="out_mail" Type="OutArgument(snm:MailMessage)" />
+    <x:Property Name="out_trained_exception" Type="OutArgument(s:Exception)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_dr_ServiceCatalogoe" Type="OutArgument(sd:DataRow)" />
+    <x:Property Name="in_Current_year" Type="InArgument(x:String)" />
+    <x:Property Name="in_Current_month" Type="InArgument(x:String)" />
+    <x:Property Name="in_Current_day" Type="InArgument(x:String)" />
+    <x:Property Name="in_Current_time" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1429,2123</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Are_you_trained_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="50">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>UiPath.PDF</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Are you trained" sap:VirtualizedContainerService.HintSize="501,2058" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch are you trained " sap:VirtualizedContainerService.HintSize="459,1966" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Sequence are yo trained" sap:VirtualizedContainerService.HintSize="421,1189" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="get_theme" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:Comment sap:VirtualizedContainerService.HintSize="379,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Get an email" />
+          <ui:LogMessage DisplayName="Log Message Get an eamil" sap:VirtualizedContainerService.HintSize="379,95" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[CStr(iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_get_an_eamil_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_get_an_eamil_E_Message&quot;).ToString,in_Config(&quot;language_get_an_eamil_T_Message&quot;).ToString)))]" />
+          <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="379,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+            <TextExpression.Namespaces>
+              <sco:Collection x:TypeArguments="x:String">
+                <x:String>System.Activities</x:String>
+                <x:String>System.Activities.Statements</x:String>
+                <x:String>System.Activities.Expressions</x:String>
+                <x:String>System.Activities.Validation</x:String>
+                <x:String>System.Activities.XamlIntegration</x:String>
+                <x:String>Microsoft.VisualBasic.Activities</x:String>
+                <x:String>System</x:String>
+                <x:String>System.Collections.Generic</x:String>
+                <x:String>System.Data</x:String>
+                <x:String>System.Diagnostics</x:String>
+                <x:String>System.IO</x:String>
+                <x:String>System.Linq</x:String>
+                <x:String>System.Management.Automation</x:String>
+                <x:String>System.Net.Mail</x:String>
+                <x:String>System.Xml</x:String>
+                <x:String>System.Xml.Linq</x:String>
+                <x:String>UiPath.Library</x:String>
+                <x:String>System.Windows.Markup</x:String>
+              </sco:Collection>
+            </TextExpression.Namespaces>
+            <TextExpression.References>
+              <sco:Collection x:TypeArguments="AssemblyReference">
+                <AssemblyReference>System.Activities</AssemblyReference>
+                <AssemblyReference>mscorlib</AssemblyReference>
+                <AssemblyReference>System.Data</AssemblyReference>
+                <AssemblyReference>System</AssemblyReference>
+                <AssemblyReference>System.Core</AssemblyReference>
+                <AssemblyReference>System.Management.Automation</AssemblyReference>
+                <AssemblyReference>System.Xml</AssemblyReference>
+                <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                <AssemblyReference>UiPath.Library</AssemblyReference>
+                <AssemblyReference>PresentationFramework</AssemblyReference>
+                <AssemblyReference>WindowsBase</AssemblyReference>
+                <AssemblyReference>PresentationCore</AssemblyReference>
+                <AssemblyReference>System.Xaml</AssemblyReference>
+              </sco:Collection>
+            </TextExpression.References>
+            <sap2010:WorkflowViewState.ViewStateManager>
+              <sap2010:ViewStateManager>
+                <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+              </sap2010:ViewStateManager>
+            </sap2010:WorkflowViewState.ViewStateManager>
+          </Delay>
+          <Assign DisplayName="Assign Extract a message" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="snm:MailMessage">[out_mail]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="snm:MailMessage">[in_maillist.Item(0)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log Message print get mail object" sap:VirtualizedContainerService.HintSize="379,95" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[CStr(iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_get_mail_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_get_mail_E_Message&quot;).ToString,in_Config(&quot;language_get_mail_T_Message&quot;).ToString)))]" />
+          <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="379,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+            <TextExpression.Namespaces>
+              <sco:Collection x:TypeArguments="x:String">
+                <x:String>System.Activities</x:String>
+                <x:String>System.Activities.Statements</x:String>
+                <x:String>System.Activities.Expressions</x:String>
+                <x:String>System.Activities.Validation</x:String>
+                <x:String>System.Activities.XamlIntegration</x:String>
+                <x:String>Microsoft.VisualBasic.Activities</x:String>
+                <x:String>System</x:String>
+                <x:String>System.Collections.Generic</x:String>
+                <x:String>System.Data</x:String>
+                <x:String>System.Diagnostics</x:String>
+                <x:String>System.IO</x:String>
+                <x:String>System.Linq</x:String>
+                <x:String>System.Management.Automation</x:String>
+                <x:String>System.Net.Mail</x:String>
+                <x:String>System.Xml</x:String>
+                <x:String>System.Xml.Linq</x:String>
+                <x:String>UiPath.Library</x:String>
+                <x:String>System.Windows.Markup</x:String>
+              </sco:Collection>
+            </TextExpression.Namespaces>
+            <TextExpression.References>
+              <sco:Collection x:TypeArguments="AssemblyReference">
+                <AssemblyReference>System.Activities</AssemblyReference>
+                <AssemblyReference>mscorlib</AssemblyReference>
+                <AssemblyReference>System.Data</AssemblyReference>
+                <AssemblyReference>System</AssemblyReference>
+                <AssemblyReference>System.Core</AssemblyReference>
+                <AssemblyReference>System.Management.Automation</AssemblyReference>
+                <AssemblyReference>System.Xml</AssemblyReference>
+                <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                <AssemblyReference>UiPath.Library</AssemblyReference>
+                <AssemblyReference>PresentationFramework</AssemblyReference>
+                <AssemblyReference>WindowsBase</AssemblyReference>
+                <AssemblyReference>PresentationCore</AssemblyReference>
+                <AssemblyReference>System.Xaml</AssemblyReference>
+              </sco:Collection>
+            </TextExpression.References>
+            <sap2010:WorkflowViewState.ViewStateManager>
+              <sap2010:ViewStateManager>
+                <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+              </sap2010:ViewStateManager>
+            </sap2010:WorkflowViewState.ViewStateManager>
+          </Delay>
+          <Assign DisplayName="Assign Subject" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[get_theme]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[out_mail.Subject.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="379,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+            <TextExpression.Namespaces>
+              <sco:Collection x:TypeArguments="x:String">
+                <x:String>System.Activities</x:String>
+                <x:String>System.Activities.Statements</x:String>
+                <x:String>System.Activities.Expressions</x:String>
+                <x:String>System.Activities.Validation</x:String>
+                <x:String>System.Activities.XamlIntegration</x:String>
+                <x:String>Microsoft.VisualBasic.Activities</x:String>
+                <x:String>System</x:String>
+                <x:String>System.Collections.Generic</x:String>
+                <x:String>System.Data</x:String>
+                <x:String>System.Diagnostics</x:String>
+                <x:String>System.IO</x:String>
+                <x:String>System.Linq</x:String>
+                <x:String>System.Management.Automation</x:String>
+                <x:String>System.Net.Mail</x:String>
+                <x:String>System.Xml</x:String>
+                <x:String>System.Xml.Linq</x:String>
+                <x:String>UiPath.Library</x:String>
+                <x:String>System.Windows.Markup</x:String>
+              </sco:Collection>
+            </TextExpression.Namespaces>
+            <TextExpression.References>
+              <sco:Collection x:TypeArguments="AssemblyReference">
+                <AssemblyReference>System.Activities</AssemblyReference>
+                <AssemblyReference>mscorlib</AssemblyReference>
+                <AssemblyReference>System.Data</AssemblyReference>
+                <AssemblyReference>System</AssemblyReference>
+                <AssemblyReference>System.Core</AssemblyReference>
+                <AssemblyReference>System.Management.Automation</AssemblyReference>
+                <AssemblyReference>System.Xml</AssemblyReference>
+                <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                <AssemblyReference>UiPath.Library</AssemblyReference>
+                <AssemblyReference>PresentationFramework</AssemblyReference>
+                <AssemblyReference>WindowsBase</AssemblyReference>
+                <AssemblyReference>PresentationCore</AssemblyReference>
+                <AssemblyReference>System.Xaml</AssemblyReference>
+              </sco:Collection>
+            </TextExpression.References>
+            <sap2010:WorkflowViewState.ViewStateManager>
+              <sap2010:ViewStateManager>
+                <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+              </sap2010:ViewStateManager>
+            </sap2010:WorkflowViewState.ViewStateManager>
+          </Delay>
+          <ui:LogMessage DisplayName="Log Message print mail subject" sap:VirtualizedContainerService.HintSize="379,95" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[Cstr(iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_mail_subject_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_mail_subject_E_Message&quot;).ToString,in_Config(&quot;language_mail_subject_T_Message&quot;).ToString)))+&quot; : &quot;+get_theme.ToString]" />
+          <ui:Comment sap:VirtualizedContainerService.HintSize="379,55" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Did you find the command" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Did you find the command workflow" sap:VirtualizedContainerService.HintSize="379,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Common module\Did you find the command.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <OutArgument x:TypeArguments="sd:DataRow" x:Key="out_dr_ServiceCatalogoe">
+                <mva:VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="out_dr_ServiceCatalogoe" />
+              </OutArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtServiceCatalogoe">
+                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="in_dtServiceCatalogoe" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="get_theme">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="get_theme" />
+              </InArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+              </InArgument>
+              <InOutArgument x:TypeArguments="s:Exception" x:Key="out_trained_exception">
+                <mva:VisualBasicReference x:TypeArguments="s:Exception" ExpressionText="out_trained_exception" />
+              </InOutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Current_year">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Current_year" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Current_month">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Current_month" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Current_day">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Current_day" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Current_time">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Current_time" />
+              </InArgument>
+              <InArgument x:TypeArguments="snm:MailMessage" x:Key="in_mail">
+                <mva:VisualBasicValue x:TypeArguments="snm:MailMessage" ExpressionText="out_mail" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="425,459" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Sequence are you trained exception" sap:VirtualizedContainerService.HintSize="376,388" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message print exception" sap:VirtualizedContainerService.HintSize="334,95" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[cstr(iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_trained_exception_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_trained_exception_E_Message&quot;).ToString,in_Config(&quot;language_trained_exception_T_Message&quot;).ToString)))+&quot; : &quot;+exception.Message.ToString+&quot; ,source : &quot;+exception.Source.ToString]" />
+              <Assign DisplayName="Assign trained exception" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_7">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:Exception">[out_trained_exception]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:Exception">[exception]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Assign Extract a message" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="snm:MailMessage">[out_mail]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="snm:MailMessage">[in_maillist.Item(0)]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

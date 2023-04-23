@@ -1,0 +1,179 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Whether_the_process_is_completed" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="process_exception" Type="InArgument(s:Exception)" />
+    <x:Property Name="in_cn" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_mail" Type="InArgument(snm:MailMessage)" />
+    <x:Property Name="indt_MailTemplate" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="StartTime1" Type="InArgument(s:DateTime)" />
+    <x:Property Name="EndTime1" Type="InArgument(s:DateTime)" />
+    <x:Property Name="in_Appellation" Type="InArgument(x:String)" />
+    <x:Property Name="in_Current_year" Type="InArgument(x:String)" />
+    <x:Property Name="in_Current_month" Type="InArgument(x:String)" />
+    <x:Property Name="in_Current_time" Type="InArgument(x:String)" />
+    <x:Property Name="in_dr_ServiceCatalogoe" Type="InArgument(sd:DataRow)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1504,2037</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Whether_the_process_is_completed_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>UiPath.PDF</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Whether_the_process_is_completed" sap:VirtualizedContainerService.HintSize="526,1972" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="in_SendTo" />
+      <Variable x:TypeArguments="sd:DataRow" Name="dr_MailTemplate" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="484,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Whether the process is completed" />
+    <If Condition="[process_exception is Nothing]" DisplayName="00189:If Whether the process is completed" sap:VirtualizedContainerService.HintSize="484,1785" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="00190:Sequence Send process execution completion email" sap:VirtualizedContainerService.HintSize="421,1591" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="snm:MailMessage" Name="MailMessage" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:Comment DisplayName="00191:Comment" sap:VirtualizedContainerService.HintSize="379,55" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Send process execution completion email" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Get the senders email address workflow" sap:VirtualizedContainerService.HintSize="379,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Common module\Get the senders email address.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+              </InArgument>
+              <InArgument x:TypeArguments="snm:MailMessage" x:Key="in_mail">
+                <mva:VisualBasicValue x:TypeArguments="snm:MailMessage" ExpressionText="in_mail" />
+              </InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_SendTo">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_SendTo" />
+              </OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_cn">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_cn" />
+              </InArgument>
+              <InArgument x:TypeArguments="sd:DataRow" x:Key="in_dr_ServiceCatalogoe">
+                <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="in_dr_ServiceCatalogoe" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:LogMessage DisplayName="00192:Log Message print complate message" sap:VirtualizedContainerService.HintSize="379,95" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[cstr(iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_send_process_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_send_process_E_Message&quot;).ToString,in_Config(&quot;language_send_process_T_Message&quot;).ToString)))]" />
+          <Assign DisplayName="00193:Assign&lt;Process_Complete001&gt;" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataRow">[dr_MailTemplate]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataRow">[indt_MailTemplate.Rows.OfType(Of System.Data.DataRow).Where(Function(r) r("Mail ID").ToString.Equals("Process_Complete001")).FirstOrDefault]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[dr_MailTemplate(&quot;Mail Body&quot;).ToString.Replace(&quot;User&quot;,in_Appellation).Replace(&quot;StartTime&quot;,StartTime1.ToString(&quot;yyyy/MM/dd hh:mm:ss&quot;)).Replace(&quot;EndTime&quot;,EndTime1.ToString(&quot;yyyy/MM/dd hh:mm:ss&quot;)).Replace(&quot;Exceution_time&quot;,EndTime1.Subtract(StartTime1).ToString.Substring(0,EndTime1.Subtract(StartTime1).ToString.IndexOf(&quot;.&quot;))).Replace(&quot;Message Title Format&quot;,in_mail.Subject.ToString)]" DisplayName="00194:Send Outlook Mail Message&lt;process execution completion email&gt;" sap:VirtualizedContainerService.HintSize="379,151" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[dr_MailTemplate(&quot;Mail Subject&quot;).ToString.Replace(&quot;Message Title Format&quot;,in_mail.Subject.ToString)]" To="[in_SendTo]">
+            <ui:SendOutlookMail.Files>
+              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                <InArgument x:TypeArguments="x:String">[in_Config("Processing accessories").ToString+in_Current_year+"\"+in_Current_month+"\"+in_Current_time+"Execute Table.xlsx"]</InArgument>
+              </scg:List>
+            </ui:SendOutlookMail.Files>
+          </ui:SendOutlookMail>
+          <ui:Comment DisplayName="00195:Comment" sap:VirtualizedContainerService.HintSize="379,55" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Send processing record" />
+          <ui:LogMessage DisplayName="00196:Log Message print processing records" sap:VirtualizedContainerService.HintSize="379,95" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[cstr(iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_send_processing_record_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_send_processing_record_E_Message&quot;).ToString,in_Config(&quot;language_send_processing_record_T_Message&quot;).ToString)))]" />
+          <ui:Comment sap:VirtualizedContainerService.HintSize="379,55" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Storage record" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="00199:Invoke Send processing records workflow" sap:VirtualizedContainerService.HintSize="379,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Common module\Send processing records.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMailTemplate">[indt_MailTemplate]</InArgument>
+              <OutArgument x:TypeArguments="snm:MailMessage" x:Key="out_MailMessage">[MailMessage]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:LogMessage DisplayName="Log Message print send record" sap:VirtualizedContainerService.HintSize="379,95" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[CStr(iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),in_Config(&quot;language_send_reocrd_L_Message&quot;).ToString,iif(in_Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),in_Config(&quot;language_send_reocrd_E_Message&quot;).ToString,in_Config(&quot;language_send_reocrd_T_Message&quot;).ToString)))]" />
+          <ui:Comment sap:VirtualizedContainerService.HintSize="379,55" sap2010:WorkflowViewState.IdRef="Comment_5" Text="// Send History" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Send History workflow" sap:VirtualizedContainerService.HintSize="379,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Common module\Send History.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config">[in_Config]</InArgument>
+              <InArgument x:TypeArguments="snm:MailMessage" x:Key="MailMessage">[MailMessage]</InArgument>
+              <InArgument x:TypeArguments="sd:DataRow" x:Key="dr_MailTemplate">[dr_MailTemplate]</InArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_MailTemplate">[indt_MailTemplate]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+    </If>
+  </Sequence>
+</Activity>

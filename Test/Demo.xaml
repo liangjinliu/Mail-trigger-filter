@@ -1,0 +1,215 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Demo" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1284,5055" sap2010:WorkflowViewState.IdRef="Demo_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="24">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Demo" sap:VirtualizedContainerService.HintSize="418,4890" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="376,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[new DirectoryInfo(&quot;C:\Users\Administrator\Desktop\Automated mail filter\02_Mail trigger filter\03_Source code\Message trigger filter automation\Automation\&quot;).Exists]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="376,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[new FileInfo(&quot;C:\Users\Administrator\Desktop\Automated mail filter\02_Mail trigger filter\03_Source code\Message trigger filter automation\Mail trigger data\Mail filtering profile_Template.xlsx&quot;).Exists]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="376,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[now.ToString(&quot;yyyyMMdd&quot;)]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="376,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[DATEDIFF(&quot;m&quot;,&quot;2020/1/1&quot;,&quot;2020/2/2&quot;)]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="376,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[now.ToString(&quot;yyyy/MM/dd&quot;)]" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="376,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// How to get the time of this Monday" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="376,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[CStr(New DateTime(CInt(now.ToString(&quot;yyyy&quot;)),CInt(now.ToString(&quot;MM&quot;)),CInt(now.ToString(&quot;dd&quot;))).Add(new TimeSpan(1-CInt(Convert.ToDateTime(Now.ToString(&quot;yyyy-MM-dd&quot;)).DayOfWeek),0,0,0)))]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="376,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[DateAdd(DateInterval.Day, -(Weekday(Now) - 2), Date.Today)]" />
+    <Sequence DisplayName="Sequence How to get the time of this Monday" sap:VirtualizedContainerService.HintSize="376,3786" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="s:DateTime" Name="dt" />
+        <Variable x:TypeArguments="x:Int32" Name="dayOfWeek" />
+        <Variable x:TypeArguments="s:DateTime" Name="startWeek" />
+        <Variable x:TypeArguments="s:DateTime" Name="endWeek" />
+        <Variable x:TypeArguments="s:DateTime" Name="startMonth" />
+        <Variable x:TypeArguments="s:DateTime" Name="endMonth" />
+        <Variable x:TypeArguments="s:DateTime" Name="startQuarter" />
+        <Variable x:TypeArguments="s:DateTime" Name="endQuarter" />
+        <Variable x:TypeArguments="s:DateTime" Name="startYear" />
+        <Variable x:TypeArguments="s:DateTime" Name="endYear" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign DisplayName="Assign current time" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[dt]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[dayOfWeek]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(dt.DayOfWeek.ToString("d"))]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Assign Monday of this week" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[startWeek]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[dt.AddDays(1 - CInt((iif((dayOfWeek = 0), 7, dayOfWeek))))]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Assign This Sunday" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[endWeek]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[startWeek.AddDays(6)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Assign At the beginning of this month" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[startMonth]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[dt.AddDays(1 - dt.Day)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Assign End of the month" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[endMonth]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[startMonth.AddMonths(1).AddDays(-1)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[startQuarter]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[dt.AddMonths(0 - (dt.Month - 1) Mod 3).AddDays(1 - dt.Day)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[endQuarter]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[startQuarter.AddMonths(3).AddDays(-1)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[startYear]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[New DateTime(dt.Year, 1, 1)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[endYear]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[New DateTime(dt.Year, 12, 31)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;当前时间 : &quot;+dt.ToString]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;本周周一 : &quot;+startWeek.ToString]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;本周周日 : &quot;+endWeek.ToString]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;本月月初 : &quot;+startMonth.ToString]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;本月月末 : &quot;+endMonth.ToString]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;本季度初 : &quot;+startQuarter.ToString]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;本季度末 : &quot;+endQuarter.ToString]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;本年年初 : &quot;+startYear.ToString]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;本年年末 : &quot;+endYear.ToString]" />
+      <ui:Comment sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Write your comments in the Text property" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;本周周一 : &quot;+CStr(DateTime.Now.AddDays(1 - CInt(IIf(Convert.ToInt32(DateTime.Now.DayOfWeek.ToString(&quot;d&quot;)) = 0, 7, Convert.ToInt32(DateTime.Now.DayOfWeek.ToString(&quot;d&quot;))))))]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;本周周日：&quot;+CStr(DateTime.Now.AddDays(1 - CInt(IIf(Convert.ToInt32(DateTime.Now.DayOfWeek.ToString(&quot;d&quot;)) = 0, 7, Convert.ToInt32(DateTime.Now.DayOfWeek.ToString(&quot;d&quot;))))).AddDays(6))]" />
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,314" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[CStr(New DateTime(CInt(now.ToString(&quot;yyyy&quot;)),CInt(now.ToString(&quot;MM&quot;)),CInt(now.ToString(&quot;dd&quot;)).Add(new TimeSpan(1-CInt(Convert.ToDateTime(Now.ToString(&quot;yyyy-MM-dd&quot;)).DayOfWeek),0,0,0))]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[CStr(New DateTime(CInt(format(now,&quot;yyyy&quot;)),CInt(formt(now,&quot;MM&quot;)),CInt(format(now,&quot;dd&quot;))).Add(new TimeSpan(1-CInt(Convert.ToDateTime(Format(Now, &quot;yyyy-MM-dd&quot;).ToString).DayOfWeek),0,0,0))]" />
+          </Sequence>
+        </ui:CommentOut.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CommentOut>
+      <ui:Comment sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// 本季度初" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[cstr(DateTime.Now.AddMonths(0-(DateTime.Now.Month-1) Mod 3).AddDays(1-DateTime.Now.Day).ToString(&quot;yyyy/MM&quot;))]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[cstr(DateTime.Now.AddMonths(0-(DateTime.Now.Month-1) Mod 3).AddDays(1-DateTime.Now.Day).AddMonths(1).ToString(&quot;yyyy/MM/dd&quot;))]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[DateTime.Now.AddMonths(0-(DateTime.Now.Month-1) Mod 3).AddDays(1-DateTime.Now.Day).AddMonths(3).AddDays(-1).ToString(&quot;yyyy/MM/dd&quot;)]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Info" Message="[Now.ToString(&quot;yyyyMMddhhmmss&quot;)]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[New DateTime(DateTime.Now.Year, 1, 1).ToString(&quot;yyyy/MM/dd&quot;)]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[New DateTime(DateTime.Now.Year, 12, 31).ToString(&quot;yyyy/MM/dd&quot;)]" />
+      <ui:Comment sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// 上半年" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Info" Message="[DateTime.Now.AddYears(-1).ToString(&quot;yyyy&quot;)]" />
+    </Sequence>
+  </Sequence>
+</Activity>

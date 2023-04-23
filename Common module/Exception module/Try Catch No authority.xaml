@@ -1,0 +1,153 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Try_Catch_No_authority" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="mail" Type="InArgument(snm:MailMessage)" />
+    <x:Property Name="dr_MailTemplate" Type="InArgument(sd:DataRow)" />
+    <x:Property Name="dt_MailTemplate" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="exception" Type="InArgument(s:Exception)" />
+    <x:Property Name="other_exception" Type="InOutArgument(s:Exception)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1214,1715</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Try_Catch_No_authority_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Try_Catch_No_authority" sap:VirtualizedContainerService.HintSize="480,1550" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="438,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Try Catch No authority" />
+    <TryCatch DisplayName="00095:Try Catch No authority" sap:VirtualizedContainerService.HintSize="438,1363" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="00096:Sequence No authority exception" sap:VirtualizedContainerService.HintSize="376,694" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:Comment DisplayName="00097:Comment" sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Mobile mail, exception" />
+          <ui:LogMessage DisplayName="00098:Log Message print mobile mail" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_mobile_mail_exception_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_mobile_mail_exception_E_Message&quot;).ToString,Config(&quot;language_mobile_mail_exception_T_Message&quot;).ToString)))]" />
+          <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="00099:Move Outlook Mail Message&lt;mailbox exception&gt;" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_1" MailFolder="[Config(&quot;mailbox_exception&quot;).ToString]" MailMessage="[mail]" />
+          <Assign DisplayName="00100:Assign&lt;Other_Error001&gt;" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataRow">[dr_MailTemplate]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataRow">[dt_MailTemplate.Rows.OfType(Of System.Data.DataRow).Where(Function(r) r("Mail ID").ToString.Equals("Other_Error001")).FirstOrDefault]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[dr_MailTemplate(&quot;Mail Body&quot;).ToString.Replace(&quot;User&quot;,Config(&quot;administrator_name&quot;).ToString).Replace(&quot;ErrorMessage&quot;,exception.Message.ToString)]" DisplayName="00101:Send Outlook Mail Message&lt;No authority&gt;" sap:VirtualizedContainerService.HintSize="334,147" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[dr_MailTemplate(&quot;Mail Subject&quot;).ToString]" To="[Config(&quot;administrator_email&quot;).ToString+dr_MailTemplate(&quot;Mail CC&quot;).ToString]">
+            <ui:SendOutlookMail.Files>
+              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+            </ui:SendOutlookMail.Files>
+          </ui:SendOutlookMail>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,355" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="00102:Sequence no authority exception" sap:VirtualizedContainerService.HintSize="376,285" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="00103:Log Message print no authority exception message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_no_authority_exception_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_no_authority_exception_E_Message&quot;).ToString,Config(&quot;language_no_authority_exception_T_Message&quot;).ToString)))+&quot; : &quot;+exception.Message.ToString+&quot;, source :&quot;+exception.Source.ToString]" />
+              <Assign DisplayName="Assign no authority exception" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:Exception">[other_exception]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:Exception">[new Exception(CStr(iif(Config("language").ToString.Equals("L"),Config("language_no_authority_exception_L_Message").ToString,iif(Config("language").ToString.Equals("E"),Config("language_no_authority_exception_E_Message").ToString,Config("language_no_authority_exception_T_Message").ToString)))+" : "+exception.Message.ToString+", at source :"+exception.Source.ToString)]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

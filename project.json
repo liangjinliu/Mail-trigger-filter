@@ -1,0 +1,131 @@
+{
+  "name": "Mail trigger filter",
+  "description": "邮件触发过滤器",
+  "main": "Main.xaml",
+  "dependencies": {
+    "BalaReva.Excel.Activities": "[2021.0.0]",
+    "DatatableToHtmlDatatable.Activities": "[1.0.3]",
+    "Newtonsoft.Json": "[11.0.2]",
+    "RenameFile.Activities": "[1.0.4]",
+    "System.Memory": "[4.5.4]",
+    "UiPath.Credentials.Activities": "[2.0.0]",
+    "UiPath.Excel.Activities": "[2.10.4]",
+    "UiPath.Mail.Activities": "[1.10.5]",
+    "UiPath.System.Activities": "[21.4.1]",
+    "UiPath.UIAutomation.Activities": "[21.4.4]",
+    "VerificationPackage": "[1.0.0]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "21.2.0.0",
+  "projectVersion": "1.0.3",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": false
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "3fd126a1-11d0-47fe-aa67-e68bdfecb6a5",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Read configuration\\Read configuration file.xaml",
+      "uniqueId": "0abaf276-f027-4c4d-af87-7fd7ef3e7cee",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Test\\Demo.xaml",
+      "uniqueId": "ef786b60-b214-412b-94a8-fb2ea8fc8123",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Test\\Demo1.xaml",
+      "uniqueId": "1888804c-ac72-41a0-b431-b9d62247513c",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Test\\Demo2.xaml",
+      "uniqueId": "e11a9946-ca71-4764-ba8a-1b6aa5b852fd",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Test\\Demo_Web_HttpRequest.xaml",
+      "uniqueId": "0cc8b993-1eca-462e-8ccb-1db9c404069b",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Test\\Demo3.xaml",
+      "uniqueId": "7bf1a152-840f-4f6c-abf7-65dc3af8f4be",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Common module\\Catch Processing records exception.xaml",
+      "uniqueId": "5178635e-1ce2-4b6d-a487-096a245f6043",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Test\\Demo5.xaml",
+      "uniqueId": "bf085886-858d-4ae6-a7b1-62b0d3061b86",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Test\\Demo_MailBody_Text.xaml",
+      "uniqueId": "df76a632-3006-4bb2-ac91-60bbfdfcc838",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Test\\Send Mail attachment.xaml",
+      "uniqueId": "9afa2025-58fc-40cf-ba10-448e9517c55d",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Test\\Switch.xaml",
+      "uniqueId": "4762ca6f-de38-4c36-a918-51f084b19382",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
+}
