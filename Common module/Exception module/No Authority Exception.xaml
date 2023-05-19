@@ -13,7 +13,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1477,2963</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1341,3047</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>No_Authority_Exception_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -86,6 +86,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -93,14 +94,14 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="No_Authority_Exception" sap:VirtualizedContainerService.HintSize="954,2798" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="No_Authority_Exception" sap:VirtualizedContainerService.HintSize="1067,2982" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="912,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// No Authority Exception" />
-    <If sap2010:Annotation.AnnotationText="Automatic reply" Condition="[trained_exception isnot Nothing]" DisplayName="00009:If No authority" sap:VirtualizedContainerService.HintSize="912,2611" sap2010:WorkflowViewState.IdRef="If_4">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="1025,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// No Authority Exception" />
+    <If sap2010:Annotation.AnnotationText="Automatic reply" Condition="[trained_exception isnot Nothing]" DisplayName="00009:If No authority" sap:VirtualizedContainerService.HintSize="1025,2795" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -109,25 +110,25 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="876,2400" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <Sequence sap:VirtualizedContainerService.HintSize="989,2580" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[not mail.Subject.ToString.Contains(Config(&quot;auto reply&quot;).ToString)]" DisplayName="If auto reply exists" sap:VirtualizedContainerService.HintSize="834,2308" sap2010:WorkflowViewState.IdRef="If_5">
+          <If Condition="[not mail.Subject.ToString.Contains(Config(&quot;auto reply&quot;).ToString)]" DisplayName="If auto reply exists" sap:VirtualizedContainerService.HintSize="947,2488" sap2010:WorkflowViewState.IdRef="If_5">
             <If.Then>
-              <Sequence DisplayName="00010:Sequence No authority" sap:VirtualizedContainerService.HintSize="413,2148" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence DisplayName="00010:Sequence No authority" sap:VirtualizedContainerService.HintSize="526,2325" sap2010:WorkflowViewState.IdRef="Sequence_9">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="00011:Log Message print no authority" sap:VirtualizedContainerService.HintSize="371,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_no_authority_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_no_authority_E_Eessage&quot;).ToString,Config(&quot;language_no_authority_T_Tessage&quot;).ToString)))]" />
-                <ui:Comment DisplayName="00012:Comment" sap:VirtualizedContainerService.HintSize="371,56" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Keep records of no training" />
-                <ui:LogMessage DisplayName="00013:Private: Log Message print keep records" sap:VirtualizedContainerService.HintSize="371,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_keep_records_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_keep_records_E_Message&quot;).ToString,Config(&quot;language_keep_records_T_Message&quot;).ToString)))]" />
-                <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00014:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="371,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+                <ui:LogMessage DisplayName="00011:Log Message print no authority" sap:VirtualizedContainerService.HintSize="484,95" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_no_authority_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_no_authority_E_Eessage&quot;).ToString,Config(&quot;language_no_authority_T_Tessage&quot;).ToString)))]" />
+                <ui:Comment DisplayName="00012:Comment" sap:VirtualizedContainerService.HintSize="484,55" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Keep records of no training" />
+                <ui:LogMessage DisplayName="00013:Private: Log Message print keep records" sap:VirtualizedContainerService.HintSize="484,95" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_keep_records_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_keep_records_E_Message&quot;).ToString,Config(&quot;language_keep_records_T_Message&quot;).ToString)))]" />
+                <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00014:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Delay_1">
                   <TextExpression.Namespaces>
                     <sco:Collection x:TypeArguments="x:String">
                       <x:String>System.Activities</x:String>
@@ -173,7 +174,7 @@
                     </sap2010:ViewStateManager>
                   </sap2010:WorkflowViewState.ViewStateManager>
                 </Delay>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Add data row workflow" sap:VirtualizedContainerService.HintSize="371,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="No Authority\Add data row.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Add data row workflow" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="No Authority\Add data row.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="snm:MailMessage" x:Key="mail">[mail]</InArgument>
                     <InArgument x:TypeArguments="s:Exception" x:Key="trained_exception">[trained_exception]</InArgument>
@@ -181,8 +182,8 @@
                     <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_RecordKeeping">[dt_RecordKeeping]</InOutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <ui:LogMessage DisplayName="00021:Log Message print add data row" sap:VirtualizedContainerService.HintSize="371,93" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[CStr(IIf(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_add_data_row_L_Message&quot;).ToString,IIf(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_add_data_row_E_Message&quot;).ToString,Config(&quot;language_add_data_row_T_Message&quot;).ToString)))]" />
-                <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00022:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="371,22" sap2010:WorkflowViewState.IdRef="Delay_2">
+                <ui:LogMessage DisplayName="00021:Log Message print add data row" sap:VirtualizedContainerService.HintSize="484,95" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[CStr(IIf(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_add_data_row_L_Message&quot;).ToString,IIf(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_add_data_row_E_Message&quot;).ToString,Config(&quot;language_add_data_row_T_Message&quot;).ToString)))]" />
+                <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00022:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Delay_2">
                   <TextExpression.Namespaces>
                     <sco:Collection x:TypeArguments="x:String">
                       <x:String>System.Activities</x:String>
@@ -228,13 +229,13 @@
                     </sap2010:ViewStateManager>
                   </sap2010:WorkflowViewState.ViewStateManager>
                 </Delay>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Does the processing record file workflow" sap:VirtualizedContainerService.HintSize="371,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="No Authority\Does the processing record file.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Does the processing record file workflow" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="No Authority\Does the processing record file.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config">[Config]</InArgument>
                     <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_RecordKeeping">[dt_RecordKeeping]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00026:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="371,22" sap2010:WorkflowViewState.IdRef="Delay_3">
+                <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00026:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Delay_3">
                   <TextExpression.Namespaces>
                     <sco:Collection x:TypeArguments="x:String">
                       <x:String>System.Activities</x:String>
@@ -280,26 +281,18 @@
                     </sap2010:ViewStateManager>
                   </sap2010:WorkflowViewState.ViewStateManager>
                 </Delay>
-                <ui:Comment DisplayName="00027:Comment" sap:VirtualizedContainerService.HintSize="371,56" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Send warning message" />
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke There are no instructions workflow" sap:VirtualizedContainerService.HintSize="371,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="No Authority\There are no instructions.xaml">
+                <ui:Comment DisplayName="00027:Comment" sap:VirtualizedContainerService.HintSize="484,55" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Send warning message" />
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke There are no instructions workflow" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="No Authority\There are no instructions.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="sd:DataRow" x:Key="dr_ServiceCatalogoe">
-                      <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="dr_ServiceCatalogoe" />
-                    </InArgument>
-                    <OutArgument x:TypeArguments="sd:DataRow" x:Key="dr_MailTemplate">
-                      <mva:VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="dr_MailTemplate" />
-                    </OutArgument>
-                    <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_MailTemplate">
-                      <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_MailTemplate" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config">
-                      <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="sd:DataRow" x:Key="dr_ServiceCatalogoe">[dr_ServiceCatalogoe]</InArgument>
+                    <OutArgument x:TypeArguments="sd:DataRow" x:Key="dr_MailTemplate">[dr_MailTemplate]</OutArgument>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_MailTemplate">[dt_MailTemplate]</InArgument>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config">[Config]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <ui:LogMessage DisplayName="00029:Log Message print mailtemplate" sap:VirtualizedContainerService.HintSize="371,93" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[dr_MailTemplate(&quot;Mail Body&quot;).ToString.Trim.Replace(&quot;User&quot;,mail.Sender.User).Replace(&quot;StartTime&quot;,mail.Date.ToString).Replace(&quot;Message Title Format&quot;,mail.Subject.ToString).Replace(&quot;Email&quot;,Config(&quot;administrator_email&quot;).ToString)]" />
-                <ui:LogMessage DisplayName="00032:Log Message print send mail" sap:VirtualizedContainerService.HintSize="371,93" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_send_mail_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_send_mail_E_Message&quot;).ToString,Config(&quot;language_send_mail_T_Message&quot;).ToString)))]" />
-                <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00033:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="371,22" sap2010:WorkflowViewState.IdRef="Delay_5">
+                <ui:LogMessage DisplayName="00029:Log Message print mailtemplate" sap:VirtualizedContainerService.HintSize="484,95" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[dr_MailTemplate(&quot;Mail Body&quot;).ToString.Trim.Replace(&quot;User&quot;,mail.Sender.User).Replace(&quot;StartTime&quot;,mail.Date.ToString).Replace(&quot;Message Title Format&quot;,mail.Subject.ToString).Replace(&quot;Email&quot;,Config(&quot;administrator_email&quot;).ToString)]" />
+                <ui:LogMessage DisplayName="00032:Log Message print send mail" sap:VirtualizedContainerService.HintSize="484,95" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_send_mail_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_send_mail_E_Message&quot;).ToString,Config(&quot;language_send_mail_T_Message&quot;).ToString)))]" />
+                <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00033:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Delay_5">
                   <TextExpression.Namespaces>
                     <sco:Collection x:TypeArguments="x:String">
                       <x:String>System.Activities</x:String>
@@ -345,36 +338,34 @@
                     </sap2010:ViewStateManager>
                   </sap2010:WorkflowViewState.ViewStateManager>
                 </Delay>
-                <ui:Comment DisplayName="00034:Comment" sap:VirtualizedContainerService.HintSize="371,56" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Mobile mail without training" />
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Determine instruction type workflow" sap:VirtualizedContainerService.HintSize="371,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="No Authority\Determine instruction type.xaml">
+                <ui:Comment DisplayName="00034:Comment" sap:VirtualizedContainerService.HintSize="484,55" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Mobile mail without training" />
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Determine instruction type workflow" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="No Authority\Determine instruction type.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config">
-                      <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="sd:DataRow" x:Key="dr_ServiceCatalogoe">
-                      <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="dr_ServiceCatalogoe" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="snm:MailMessage" x:Key="mail">
-                      <mva:VisualBasicValue x:TypeArguments="snm:MailMessage" ExpressionText="mail" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config">[Config]</InArgument>
+                    <InArgument x:TypeArguments="sd:DataRow" x:Key="dr_ServiceCatalogoe">[dr_ServiceCatalogoe]</InArgument>
+                    <InArgument x:TypeArguments="snm:MailMessage" x:Key="mail">[mail]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <ui:Comment sap:VirtualizedContainerService.HintSize="371,56" sap2010:WorkflowViewState.IdRef="Comment_5" Text="// Authority exception mail" />
-                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[dr_MailTemplate(&quot;Mail Body&quot;).ToString.Trim.Replace(&quot;User&quot;,Appellation).Replace(&quot;StartTime&quot;,mail.Date.ToString).Replace(&quot;Message Title Format&quot;,mail.Subject.ToString).Replace(&quot;Email&quot;,Config(&quot;administrator_email&quot;).ToString).Replace(&quot;ErrorMessage&quot;,trained_exception.Message.ToString)]" DisplayName="00031:Send Outlook Mail Message&lt;Authority exception mail&gt;" sap:VirtualizedContainerService.HintSize="371,147" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[dr_MailTemplate(&quot;Mail Subject&quot;).ToString.Trim.Replace(&quot;Message Title Format&quot;,mail.Subject.ToString)]" To="[in_SendTo]">
-                  <ui:SendOutlookMail.Files>
-                    <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                  </ui:SendOutlookMail.Files>
-                </ui:SendOutlookMail>
+                <ui:Comment sap:VirtualizedContainerService.HintSize="484,55" sap2010:WorkflowViewState.IdRef="Comment_5" Text="// Authority exception mail" />
+                <If Condition="[Config(&quot;Do not send&quot;).ToString.ToLower.Contains(in_SendTo.ToLower)]" DisplayName="IF 条件" sap:VirtualizedContainerService.HintSize="484,314" sap2010:WorkflowViewState.IdRef="If_6">
+                  <If.Else>
+                    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[dr_MailTemplate(&quot;Mail Body&quot;).ToString.Trim.Replace(&quot;User&quot;,Appellation).Replace(&quot;StartTime&quot;,mail.Date.ToString).Replace(&quot;Message Title Format&quot;,mail.Subject.ToString).Replace(&quot;Email&quot;,Config(&quot;administrator_email&quot;).ToString).Replace(&quot;ErrorMessage&quot;,trained_exception.Message.ToString)]" DisplayName="00031:Send Outlook Mail Message&lt;Authority exception mail&gt;" sap:VirtualizedContainerService.HintSize="334,151" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[dr_MailTemplate(&quot;Mail Subject&quot;).ToString.Trim.Replace(&quot;Message Title Format&quot;,mail.Subject.ToString)]" To="[in_SendTo]">
+                      <ui:SendOutlookMail.Files>
+                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                      </ui:SendOutlookMail.Files>
+                    </ui:SendOutlookMail>
+                  </If.Else>
+                </If>
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Sequence Automatic reply" sap:VirtualizedContainerService.HintSize="376,312" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <Sequence DisplayName="Sequence Automatic reply" sap:VirtualizedContainerService.HintSize="376,314" sap2010:WorkflowViewState.IdRef="Sequence_11">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message Automatic reply" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Trim.Equals(&quot;L&quot;),Config(&quot;language_Automatic_reply_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Trim.Equals(&quot;E&quot;),Config(&quot;language_Automatic_reply_E_Message&quot;).ToString,Config(&quot;language_Automatic_reply_T_Message&quot;).ToString)))]" />
+                <ui:LogMessage DisplayName="Log Message Automatic reply" sap:VirtualizedContainerService.HintSize="334,95" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Trim.Equals(&quot;L&quot;),Config(&quot;language_Automatic_reply_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Trim.Equals(&quot;E&quot;),Config(&quot;language_Automatic_reply_E_Message&quot;).ToString,Config(&quot;language_Automatic_reply_T_Message&quot;).ToString)))]" />
                 <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message automati reply" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_4" MailFolder="[Config(&quot;mailbox_automatic_reply&quot;).ToString]" MailMessage="[mail]" />
               </Sequence>
             </If.Else>

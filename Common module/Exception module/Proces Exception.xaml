@@ -18,7 +18,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1416,3693</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1341,3794</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Proces_Exception_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -86,23 +86,20 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Proces_Exception" sap:VirtualizedContainerService.HintSize="833,3528" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Proces_Exception" sap:VirtualizedContainerService.HintSize="978,3729" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="scg:List(x:String)" Name="attachment_list">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new list(of String)" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[new list(of String)]" Name="attachment_list" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="791,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Proces Exception" />
-    <If Condition="[process_exception isnot Nothing]" DisplayName="00069:If proces exception isnot nothing" sap:VirtualizedContainerService.HintSize="791,3341" sap2010:WorkflowViewState.IdRef="If_4">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="936,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Proces Exception" />
+    <If Condition="[process_exception isnot Nothing]" DisplayName="00069:If proces exception isnot nothing" sap:VirtualizedContainerService.HintSize="936,3542" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -110,7 +107,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="00070:Sequence send process exception mail" sap:VirtualizedContainerService.HintSize="755,3161" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="00070:Sequence send process exception mail" sap:VirtualizedContainerService.HintSize="900,3358" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="snm:MailMessage" Name="MailMessage" />
           </Sequence.Variables>
@@ -119,9 +116,9 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="00071:Log Message print error process" sap:VirtualizedContainerService.HintSize="713,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_process_exception_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_process_exception_E_Message&quot;).ToString,Config(&quot;language_process_exception_T_Message&quot;).ToString)))]" />
-          <ui:Comment DisplayName="00072:Comment" sap:VirtualizedContainerService.HintSize="713,55" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Send warning message" />
-          <Assign DisplayName="00073:Assign&lt;Process_Error001&gt;" sap:VirtualizedContainerService.HintSize="713,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <ui:LogMessage DisplayName="00071:Log Message print error process" sap:VirtualizedContainerService.HintSize="858,95" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_process_exception_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_process_exception_E_Message&quot;).ToString,Config(&quot;language_process_exception_T_Message&quot;).ToString)))]" />
+          <ui:Comment DisplayName="00072:Comment" sap:VirtualizedContainerService.HintSize="858,55" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Send warning message" />
+          <Assign DisplayName="00073:Assign&lt;Process_Error001&gt;" sap:VirtualizedContainerService.HintSize="858,61" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="sd:DataRow">[dr_MailTemplate]</OutArgument>
             </Assign.To>
@@ -129,29 +126,29 @@
               <InArgument x:TypeArguments="sd:DataRow">[dt_MailTemplate.Rows.OfType(Of System.Data.DataRow).Where(Function(r) r("Mail ID").ToString.Equals("Process_Error001")).FirstOrDefault]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:LogMessage DisplayName="00074:Log Message print subject" sap:VirtualizedContainerService.HintSize="713,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[dr_MailTemplate(&quot;Mail Subject&quot;).ToString.Trim.Replace(&quot;Message Title Format&quot;,mail.Subject.ToString)]" />
-          <ui:LogMessage DisplayName="00075:Log Message print body" sap:VirtualizedContainerService.HintSize="713,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[dr_MailTemplate(&quot;Mail Body&quot;).ToString.Trim.Replace(&quot;User&quot;,mail.Sender.User).Replace(&quot;Message Title Format&quot;,mail.Subject.ToString).Replace(&quot;StartTime&quot;,StartTime.ToString).Replace(&quot;EndTime&quot;,EndTime.ToString).Replace(&quot;Exceution_time&quot;,DateDiff(&quot;n&quot;,StartTime,EndTime).ToString).Replace(&quot;Email&quot;,Config(&quot;administrator_email&quot;).ToString)]" />
-          <ui:LogMessage DisplayName="Log Message Processing accessories (Execute Table) " sap:VirtualizedContainerService.HintSize="713,93" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Warn" Message="[&quot;Processing accessories (Execute Table) : &quot;+Config(&quot;Processing accessories&quot;).ToString+in_Current_year+&quot;\&quot;+in_Current_month+&quot;\&quot;+in_Current_time+&quot;Execute Table.xlsx&quot;]" />
-          <Sequence DisplayName="Sequence Update (mail attachment)" sap:VirtualizedContainerService.HintSize="713,825" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <ui:LogMessage DisplayName="00074:Log Message print subject" sap:VirtualizedContainerService.HintSize="858,95" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[dr_MailTemplate(&quot;Mail Subject&quot;).ToString.Trim.Replace(&quot;Message Title Format&quot;,mail.Subject.ToString)]" />
+          <ui:LogMessage DisplayName="00075:Log Message print body" sap:VirtualizedContainerService.HintSize="858,95" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[dr_MailTemplate(&quot;Mail Body&quot;).ToString.Trim.Replace(&quot;User&quot;,mail.Sender.User).Replace(&quot;Message Title Format&quot;,mail.Subject.ToString).Replace(&quot;StartTime&quot;,StartTime.ToString).Replace(&quot;EndTime&quot;,EndTime.ToString).Replace(&quot;Exceution_time&quot;,DateDiff(&quot;n&quot;,StartTime,EndTime).ToString).Replace(&quot;Email&quot;,Config(&quot;administrator_email&quot;).ToString)]" />
+          <ui:LogMessage DisplayName="Log Message Processing accessories (Execute Table) " sap:VirtualizedContainerService.HintSize="858,95" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Warn" Message="[&quot;Processing accessories (Execute Table) : &quot;+Config(&quot;Processing accessories&quot;).ToString+in_Current_year+&quot;\&quot;+in_Current_month+&quot;\&quot;+in_Current_time+&quot;Execute Table.xlsx&quot;]" />
+          <Sequence DisplayName="Sequence Update (mail attachment)" sap:VirtualizedContainerService.HintSize="858,835" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[indt_ExecutionTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="560,453" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[indt_ExecutionTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="560,459" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,332" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,336" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[not string.IsNullOrEmpty(CurrentRow(&quot;指令異常截圖&quot;).ToString)]" DisplayName="If Screenshot of instruction exception exists" sap:VirtualizedContainerService.HintSize="484,240" sap2010:WorkflowViewState.IdRef="If_6">
+                    <If Condition="[not string.IsNullOrEmpty(CurrentRow(&quot;指令異常截圖&quot;).ToString)]" DisplayName="If Screenshot of instruction exception exists" sap:VirtualizedContainerService.HintSize="484,244" sap2010:WorkflowViewState.IdRef="If_6">
                       <If.Then>
                         <AddToCollection x:TypeArguments="x:String" Collection="[attachment_list]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="[CurrentRow(&quot;指令異常截圖&quot;).ToString]" />
                       </If.Then>
@@ -160,7 +157,7 @@
                 </ActivityAction>
               </ui:ForEachRow.Body>
             </ui:ForEachRow>
-            <If Condition="[new FileInfo(Config(&quot;Processing accessories&quot;).ToString+in_Current_year+&quot;\&quot;+in_Current_month+&quot;\&quot;+in_Current_time+&quot;Execute Table.xlsx&quot;).Exists]" DisplayName="00077:If Is the file empty(Execute Table)" sap:VirtualizedContainerService.HintSize="560,240" sap2010:WorkflowViewState.IdRef="If_7">
+            <If Condition="[new FileInfo(Config(&quot;Processing accessories&quot;).ToString+in_Current_year+&quot;\&quot;+in_Current_month+&quot;\&quot;+in_Current_time+&quot;Execute Table.xlsx&quot;).Exists]" DisplayName="00077:If Is the file empty(Execute Table)" sap:VirtualizedContainerService.HintSize="560,244" sap2010:WorkflowViewState.IdRef="If_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -172,9 +169,9 @@
               </If.Then>
             </If>
           </Sequence>
-          <ui:Comment DisplayName="00080:Comment" sap:VirtualizedContainerService.HintSize="713,56" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Send process exception message" />
-          <ui:LogMessage DisplayName="00081:Log Message print send exception messge " sap:VirtualizedContainerService.HintSize="713,93" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_send_process_exception_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_send_process_exception_E_Message&quot;).ToString,Config(&quot;language_send_process_exception_T_Message&quot;).ToString)))]" />
-          <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00082:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="713,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+          <ui:Comment DisplayName="00080:Comment" sap:VirtualizedContainerService.HintSize="858,55" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Send process exception message" />
+          <ui:LogMessage DisplayName="00081:Log Message print send exception messge " sap:VirtualizedContainerService.HintSize="858,95" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[CStr(iif(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_send_process_exception_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_send_process_exception_E_Message&quot;).ToString,Config(&quot;language_send_process_exception_T_Message&quot;).ToString)))]" />
+          <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00082:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="858,22" sap2010:WorkflowViewState.IdRef="Delay_1">
             <TextExpression.Namespaces>
               <sco:Collection x:TypeArguments="x:String">
                 <x:String>System.Activities</x:String>
@@ -220,9 +217,9 @@
               </sap2010:ViewStateManager>
             </sap2010:WorkflowViewState.ViewStateManager>
           </Delay>
-          <ui:Comment DisplayName="00087:Comment" sap:VirtualizedContainerService.HintSize="713,56" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Handle exception, move to pending" />
-          <ui:LogMessage DisplayName="00088:Log Message print handle exception" sap:VirtualizedContainerService.HintSize="713,93" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[CStr(IIF(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_handle_exception_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_handle_exception_E_Message&quot;).ToString,Config(&quot;language_handle_exception_T_Message&quot;).ToString)))]" />
-          <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00086:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="713,22" sap2010:WorkflowViewState.IdRef="Delay_2">
+          <ui:Comment DisplayName="00087:Comment" sap:VirtualizedContainerService.HintSize="858,55" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Handle exception, move to pending" />
+          <ui:LogMessage DisplayName="00088:Log Message print handle exception" sap:VirtualizedContainerService.HintSize="858,95" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[CStr(IIF(Config(&quot;language&quot;).ToString.Equals(&quot;L&quot;),Config(&quot;language_handle_exception_L_Message&quot;).ToString,iif(Config(&quot;language&quot;).ToString.Equals(&quot;E&quot;),Config(&quot;language_handle_exception_E_Message&quot;).ToString,Config(&quot;language_handle_exception_T_Message&quot;).ToString)))]" />
+          <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00086:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="858,22" sap2010:WorkflowViewState.IdRef="Delay_2">
             <TextExpression.Namespaces>
               <sco:Collection x:TypeArguments="x:String">
                 <x:String>System.Activities</x:String>
@@ -268,8 +265,8 @@
               </sap2010:ViewStateManager>
             </sap2010:WorkflowViewState.ViewStateManager>
           </Delay>
-          <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="00089:Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="713,87" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_1" MailFolder="[Config(&quot;mailbox_exception&quot;).ToString]" MailMessage="[mail]" />
-          <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00090:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="713,22" sap2010:WorkflowViewState.IdRef="Delay_3">
+          <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="00089:Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="858,87" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_1" MailFolder="[Config(&quot;mailbox_exception&quot;).ToString]" MailMessage="[mail]" />
+          <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="00090:Delay 100 milliseconds" Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="858,22" sap2010:WorkflowViewState.IdRef="Delay_3">
             <TextExpression.Namespaces>
               <sco:Collection x:TypeArguments="x:String">
                 <x:String>System.Activities</x:String>
@@ -315,23 +312,27 @@
               </sap2010:ViewStateManager>
             </sap2010:WorkflowViewState.ViewStateManager>
           </Delay>
-          <ui:LogMessage DisplayName="Log Message Process exception send to" sap:VirtualizedContainerService.HintSize="713,93" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Warn" Message="[&quot;Process exception send to : &quot;+in_SendTo]" />
-          <ui:LogMessage DisplayName="Log Message Process exception body" sap:VirtualizedContainerService.HintSize="713,93" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Warn" Message="[&quot;Process exception body : &quot;+dr_MailTemplate(&quot;Mail Body&quot;).ToString.Trim.Replace(&quot;User&quot;,Appellation).Replace(&quot;Message Title Format&quot;,mail.Subject.ToString).Replace(&quot;StartTime&quot;,StartTime.ToString(&quot;yyyy/MM/dd hh:mm:ss&quot;)).Replace(&quot;EndTime&quot;,EndTime.ToString(&quot;yyyy/MM/dd hh:mm:ss&quot;)).Replace(&quot;Exceution_time&quot;,EndTime.Subtract(StartTime).ToString.Substring(0,InStr(EndTime.Subtract(StartTime).ToString,&quot;.&quot;)-1)).Replace(&quot;Email&quot;,Config(&quot;administrator_email&quot;).ToString).Replace(&quot;Error_Message&quot;,process_exception.Message.ToString)]" />
-          <ui:LogMessage DisplayName="Log Message Process exception subject" sap:VirtualizedContainerService.HintSize="713,93" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Warn" Message="[&quot;Process exception subjct : &quot;+dr_MailTemplate(&quot;Mail Subject&quot;).ToString.Trim.Replace(&quot;Message Title Format&quot;,mail.Subject.ToString)]" />
-          <If Condition="[attachment_list.Count&gt;0]" DisplayName="00083:If mailmessae isnot nothing" sap:VirtualizedContainerService.HintSize="713,307" sap2010:WorkflowViewState.IdRef="If_3">
-            <If.Then>
-              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" AttachmentsCollection="[attachment_list]" Body="[dr_MailTemplate(&quot;Mail Body&quot;).ToString.Trim.Replace(&quot;User&quot;,Appellation).Replace(&quot;Message Title Format&quot;,mail.Subject.ToString).Replace(&quot;StartTime&quot;,StartTime.ToString(&quot;yyyy/MM/dd hh:mm:ss&quot;)).Replace(&quot;EndTime&quot;,EndTime.ToString(&quot;yyyy/MM/dd hh:mm:ss&quot;)).Replace(&quot;Exceution_time&quot;,EndTime.Subtract(StartTime).ToString.Substring(0,EndTime.Subtract(StartTime).ToString.IndexOf(&quot;.&quot;))).Replace(&quot;Email&quot;,Config(&quot;administrator_email&quot;).ToString).Replace(&quot;Error_Message&quot;,process_exception.Message.ToString)]" DisplayName="00084:Send Outlook Mail Message&lt;process exception message&gt;" sap:VirtualizedContainerService.HintSize="334,147" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="High" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[dr_MailTemplate(&quot;Mail Subject&quot;).ToString.Trim.Replace(&quot;Message Title Format&quot;,mail.Subject.ToString)]" To="[in_SendTo]">
-                <ui:SendOutlookMail.Files>
-                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
-                </ui:SendOutlookMail.Files>
-              </ui:SendOutlookMail>
-            </If.Then>
+          <ui:LogMessage DisplayName="Log Message Process exception send to" sap:VirtualizedContainerService.HintSize="858,95" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Warn" Message="[&quot;Process exception send to : &quot;+in_SendTo]" />
+          <ui:LogMessage DisplayName="Log Message Process exception body" sap:VirtualizedContainerService.HintSize="858,95" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Warn" Message="[&quot;Process exception body : &quot;+dr_MailTemplate(&quot;Mail Body&quot;).ToString.Trim.Replace(&quot;User&quot;,Appellation).Replace(&quot;Message Title Format&quot;,mail.Subject.ToString).Replace(&quot;StartTime&quot;,StartTime.ToString(&quot;yyyy/MM/dd hh:mm:ss&quot;)).Replace(&quot;EndTime&quot;,EndTime.ToString(&quot;yyyy/MM/dd hh:mm:ss&quot;)).Replace(&quot;Exceution_time&quot;,EndTime.Subtract(StartTime).ToString.Substring(0,InStr(EndTime.Subtract(StartTime).ToString,&quot;.&quot;)-1)).Replace(&quot;Email&quot;,Config(&quot;administrator_email&quot;).ToString).Replace(&quot;Error_Message&quot;,process_exception.Message.ToString)]" />
+          <ui:LogMessage DisplayName="Log Message Process exception subject" sap:VirtualizedContainerService.HintSize="858,95" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Warn" Message="[&quot;Process exception subjct : &quot;+dr_MailTemplate(&quot;Mail Subject&quot;).ToString.Trim.Replace(&quot;Message Title Format&quot;,mail.Subject.ToString)]" />
+          <If Condition="[Config(&quot;Do not send&quot;).ToString.ToLower.Contains(in_SendTo.ToLower)]" DisplayName="IF 条件" sap:VirtualizedContainerService.HintSize="858,477" sap2010:WorkflowViewState.IdRef="If_8">
             <If.Else>
-              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[dr_MailTemplate(&quot;Mail Body&quot;).ToString.Trim.Replace(&quot;User&quot;,Appellation).Replace(&quot;Message Title Format&quot;,mail.Subject.ToString).Replace(&quot;StartTime&quot;,StartTime.ToString(&quot;yyyy/MM/dd hh:mm:ss&quot;)).Replace(&quot;EndTime&quot;,EndTime.ToString(&quot;yyyy/MM/dd hh:mm:ss&quot;)).Replace(&quot;Exceution_time&quot;,EndTime.Subtract(StartTime).ToString.Substring(0,EndTime.Subtract(StartTime).ToString.IndexOf(&quot;.&quot;))).Replace(&quot;Email&quot;,Config(&quot;administrator_email&quot;).ToString).Replace(&quot;Error_Message&quot;,process_exception.Message.ToString)]" DisplayName="00085:Send Outlook Mail Message&lt;process exception message&gt;" sap:VirtualizedContainerService.HintSize="334,147" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[dr_MailTemplate(&quot;Mail Subject&quot;).ToString.Trim.Replace(&quot;Message Title Format&quot;,mail.Subject.ToString)]" To="[in_SendTo]">
-                <ui:SendOutlookMail.Files>
-                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                </ui:SendOutlookMail.Files>
-              </ui:SendOutlookMail>
+              <If Condition="[attachment_list.Count&gt;0]" DisplayName="00083:If mailmessae isnot nothing" sap:VirtualizedContainerService.HintSize="713,314" sap2010:WorkflowViewState.IdRef="If_3">
+                <If.Then>
+                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" AttachmentsCollection="[attachment_list]" Body="[dr_MailTemplate(&quot;Mail Body&quot;).ToString.Trim.Replace(&quot;User&quot;,Appellation).Replace(&quot;Message Title Format&quot;,mail.Subject.ToString).Replace(&quot;StartTime&quot;,StartTime.ToString(&quot;yyyy/MM/dd hh:mm:ss&quot;)).Replace(&quot;EndTime&quot;,EndTime.ToString(&quot;yyyy/MM/dd hh:mm:ss&quot;)).Replace(&quot;Exceution_time&quot;,EndTime.Subtract(StartTime).ToString.Substring(0,EndTime.Subtract(StartTime).ToString.IndexOf(&quot;.&quot;))).Replace(&quot;Email&quot;,Config(&quot;administrator_email&quot;).ToString).Replace(&quot;Error_Message&quot;,process_exception.Message.ToString)]" DisplayName="00084:Send Outlook Mail Message&lt;process exception message&gt;" sap:VirtualizedContainerService.HintSize="334,151" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="High" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[dr_MailTemplate(&quot;Mail Subject&quot;).ToString.Trim.Replace(&quot;Message Title Format&quot;,mail.Subject.ToString)]" To="[in_SendTo]">
+                    <ui:SendOutlookMail.Files>
+                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
+                    </ui:SendOutlookMail.Files>
+                  </ui:SendOutlookMail>
+                </If.Then>
+                <If.Else>
+                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[dr_MailTemplate(&quot;Mail Body&quot;).ToString.Trim.Replace(&quot;User&quot;,Appellation).Replace(&quot;Message Title Format&quot;,mail.Subject.ToString).Replace(&quot;StartTime&quot;,StartTime.ToString(&quot;yyyy/MM/dd hh:mm:ss&quot;)).Replace(&quot;EndTime&quot;,EndTime.ToString(&quot;yyyy/MM/dd hh:mm:ss&quot;)).Replace(&quot;Exceution_time&quot;,EndTime.Subtract(StartTime).ToString.Substring(0,EndTime.Subtract(StartTime).ToString.IndexOf(&quot;.&quot;))).Replace(&quot;Email&quot;,Config(&quot;administrator_email&quot;).ToString).Replace(&quot;Error_Message&quot;,process_exception.Message.ToString)]" DisplayName="00085:Send Outlook Mail Message&lt;process exception message&gt;" sap:VirtualizedContainerService.HintSize="334,151" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[dr_MailTemplate(&quot;Mail Subject&quot;).ToString.Trim.Replace(&quot;Message Title Format&quot;,mail.Subject.ToString)]" To="[in_SendTo]">
+                    <ui:SendOutlookMail.Files>
+                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                    </ui:SendOutlookMail.Files>
+                  </ui:SendOutlookMail>
+                </If.Else>
+              </If>
             </If.Else>
           </If>
         </Sequence>
